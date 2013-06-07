@@ -10,7 +10,7 @@ LPX - https://bugs.launchpad.net/bugs/X
 
 CVE-XXXX-YYYY: http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=XXXX-YYYY
 
-New in release 2.4.0 (2012-XX-XX):
+New in release 2.4.0 (2012-06-09):
 
 OpenJDK
   - PR1209, S7170638: Use DTRACE_PROBE[N] in JNI Set and SetStatic Field.
