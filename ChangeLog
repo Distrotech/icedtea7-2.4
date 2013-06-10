@@ -1,3 +1,8 @@
+2013-06-10  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+
+	* NEWS: Update following release
+	annoucement.
+
 2013-04-21  Andrew John Hughes  <gnu.andrew@member.fsf.org>
 
 	* Makefile.am:
