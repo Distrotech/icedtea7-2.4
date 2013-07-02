@@ -1,3 +1,33 @@
+2013-07-01  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+
+	* Makefile.am:
+	(OPENJDK_VERSION): Bump to b31.
+	(CORBA_CHANGESET): Update to IcedTea 2.4.1 tag.
+	(JAXP_CHANGESET): Likewise.
+	(JAXWS_CHANGESET): Likewise.
+	(JDK_CHANGESET): Likewise.
+	(LANGTOOLS_CHANGESET): Likewise.
+	(OPENJDK_CHANGESET): Likewise.
+	(CORBA_SHA256SUM): Likewise.
+	(JAXP_SHA256SUM): Likewise.
+	(JAXWS_SHA256SUM): Likewise.
+	(JDK_SHA256SUM): Likewise.
+	(LANGTOOLS_SHA256SUM): Likewise.
+	(OPENJDK_SHA256SUM): Likewise.
+	* hotspot.map: Update default to IcedTea 2.4.1 tag.
+	* patches/boot/ecj-diamond.patch,
+	* patches/boot/ecj-multicatch.patch:
+	Add new cases.
+	* patches/boot/ecj-stringswitch.patch:
+	Update MethodHandleNatives patch, including
+	adding new case.
+	* patches/boot/tobin.patch:
+	Update following move from sun.awt.X11
+	to sun.awt.
+	* patches/rhino.patch,
+	* patches/systemtap_gc.patch:
+	Regenerated.
+
 2013-06-11  Andrew John Hughes  <gnu.andrew@member.fsf.org>
 
 	* configure.ac: Bump to 2.4.1pre.
