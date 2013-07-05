@@ -1,3 +1,9 @@
+2013-07-05  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+
+	* NEWS: Add latest security fixes and other
+	changes brought in when syncing with 7u40 b31.
+	Set release date.
+
 2013-07-01  Andrew John Hughes  <gnu.andrew@member.fsf.org>
 
 	* Makefile.am:
