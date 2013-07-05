@@ -1,3 +1,7 @@
+2013-07-05  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+
+	* configure.ac: Set version to 2.4.1.
+
 2013-06-28  Andrew John Hughes  <gnu.andrew@member.fsf.org>
 
 	* acinclude.m4:
