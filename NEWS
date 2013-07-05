@@ -539,7 +539,7 @@ OpenJDK
   - S7151089: PS NUMA: NUMA allocator should not attempt to free pages when using SHM large pages
   - S7151348: Build breaks due to warning clean up in sun.rmi.*(7146763)
   - S7151427: Fix the potential memory leak in error handling code in X11SurfaceData.c
-  - S7151434: java -jar -XX crashes java launcher
+  - S7151434, RH969884: java -jar -XX crashes java launcher
   - S7151532: DCmd for hotspot native memory tracking
   - S7152007: Fix warnings in sun/rmi/rmic
   - S7152031: Hotspot needs updated xawt path [macosx]
