@@ -1,3 +1,8 @@
+2013-07-08  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+
+	* configure.ac: Bump to 2.4.2pre.
+	* NEWS: Add 2.4.2 section.
+
 2013-07-05  Andrew John Hughes  <gnu.andrew@member.fsf.org>
 
 	* configure.ac: Set version to 2.4.1.
