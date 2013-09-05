@@ -1,3 +1,10 @@
+2013-09-05  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+
+	* NEWS:
+	Add new OpenJDK changes, remove duplicates
+	listed in 2.4.0 which were in earlier
+	security releases.
+
 2013-09-04  Andrew John Hughes  <gnu.andrew@member.fsf.org>
 
 	* Makefile.am,

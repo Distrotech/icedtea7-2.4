@@ -14,6 +14,107 @@ CVE-XXXX-YYYY: http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=XXXX-YYYY
 
 New in release 2.4.2 (2013-XX-XX):
 
+* OpenJDK
+  - S7122222: GC log is limited to 2G for 32-bit
+  - S7162400: Intermittent java.io.IOException: Bad file number during HotSpotVirtualMachine.executeCommand
+  - S7165807: Non optimized initialization of NSS crypto library leads to scalability issues
+  - S7199324: IPv6: JMXConnectorServer.getConnectionIDs() return IDs contradicting to address grammar
+  - S8001345: VM crashes with assert(n->outcnt() != 0 || C->top() == n || n->is_Proj()) failed: No dead instructions after post-alloc
+  - S8001424: G1: Rename certain G1-specific flags
+  - S8001425: G1: Change the default values for certain G1 specific flags
+  - S8004859: Graphics.getClipBounds/getClip return difference nonequivalent bounds, depending from transform
+  - S8005019: JTable passes row index instead of length when inserts selection interval
+  - S8005194: [parfait] #353 sun/awt/image/jpeg/imageioJPEG.c Memory leak of pointer 'scale' allocated with calloc()
+  - S8006941: [macosx] Deadlock in drag and drop
+  - S8007898: Incorrect optimization of Memory Barriers in Matcher::post_store_load_barrier()
+  - S8009168: accessibility.properties syntax issue
+  - S8009985: [parfait] Uninitialised variable at jdk/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c
+  - S8011064: Some tests have failed with SIGSEGV on arm-hflt on build b82
+  - S8011569: ARM -- avoid native stack walking
+  - S8011760: assert(delta != 0) failed: dup pointer in MemBaseline::malloc_sort_by_addr
+  - S8012144: multiple SIGSEGVs fails on staxf
+  - S8012156: tools/javac/file/zip/T6865530.java fails for win32/64
+  - S8012241: NMT huge memory footprint, it usually leads to OOME
+  - S8012366: Fix for 8007815 breaks down when only building OpenJDK (without deploy and install forests)
+  - S8013546: compiler/8011901/Test8011901.java fails with CompilationError: Compilation failed
+  - S8013719: Increment build # of hs23.21 to b02
+  - S8013791: G1: G1CollectorPolicy::initialize_flags() may set min_alignment > max_alignment
+  - S8014264: The applet pathguy_TimeDead throws java.lang.NullPointerException in java console once click drop-down check box.
+  - S8014312: Fork hs23.25 hsx from hs23.21 for jdk7u25 and reinitialize build number
+  - S8014805: NPE is thrown during certpath validation if certificate does not have AuthorityKeyIdentifier extension
+  - S8014850: Third Party License Readme updates for 7u40
+  - S8014925: Disable sun.reflect.Reflection.getCallerClass(int) with a temporary switch to re-enable it
+  - S8015237: Parallelize string table scanning during strong root processing
+  - S8015411: Bump the hsx build number for 7u21-b50 for customer
+  - S8015441: runThese crashed with assert(opcode == Op_ConP || opcode == Op_ThreadLocal || opcode == Op_CastX2P ..) failed: sanity
+  - S8015576: CMS: svc agent throws java.lang.RuntimeException: No type named "FreeList" in database
+  - S8015668: overload resolution: performance regression in JDK 7
+  - S8015884: runThese crashed with SIGSEGV, hs_err has an error instead of stacktrace
+  - S8016074: NMT: assertion failed: assert(thread->thread_state() == from) failed: coming from wrong thread state
+  - S8016102: Increment build # of hs23.25 to b02 for 7u25-b31 psu
+  - S8016131: nsk/sysdict/vm/stress/chain tests crash the VM in 'entry_frame_is_first()'
+  - S8016133: Regression: diff. behavior with user-defined SAXParser
+  - S8016157: During CTW: C2: assert(!def_outside->member(r)) failed: Use of external LRG overlaps the same LRG defined in this block
+  - S8016331: Minor issues in event tracing metadata
+  - S8016648: FEATURE_SECURE_PROCESSING set to true or false causes SAXParseException to be thrown
+  - S8016734: Remove extra code due to duplicated push
+  - S8016737: After clicking on "Print UNCOLLATED" button, the print out come in order 'Page 1', 'Page 2', 'Page 1'
+  - S8016740: assert in GC_locker from PSOldGen::expand with -XX:+PrintGCDetails and Verbose
+  - S8016767: Provide man pages generated from DARB for OpenJDK
+  - S8017070: G1: assert(_card_counts[card_num] <= G1ConcRSHotCardLimit) failed
+  - S8017159: Unexclude sun/tools/JMAP/Basic.sh test
+  - S8017173: XMLCipher with RSA_OAEP Key Transport algorithm can't be instantiated
+  - S8017174: NPE when using Logger.getAnonymousLogger or LogManager.getLogManager().getLogger
+  - S8017189: [macosx] AWT program menu disabled on Mac
+  - S8017252: new hotspot build - hs24-b51
+  - S8017478: Kitchensink crashed with SIGSEGV in BaselineReporter::diff_callsites
+  - S8017483: G1 tests fail with native OOME on Solaris x86 after HeapBaseMinAddress has been increased
+  - S8017510: Add a regression test for 8005956
+  - S8017566: Backout 8000450 - Cannot access to com.sun.corba.se.impl.orb.ORBImpl
+  - S8017588: SA: jstack -l throws UnalignedAddressException while attaching to core file for java that was started with CMS GC
+  - S8019155: Update makefiles with correct jfr packages
+  - S8019201: Regression: java.awt.image.ConvolveOp throws java.awt.image.ImagingOpException
+  - S8019236: [macosx] Add javadoc to the handleWindowFocusEvent in CEmbeddedFrame
+  - S8019265: [macosx] apple.laf.useScreenMenuBar regression comparing with jdk6
+  - S8019298: new hotspot build - hs24-b52
+  - S8019381: HashMap.isEmpty is non-final, potential issues for get/remove
+  - S8019541: 7u40 l10n resource file translation update
+  - S8019587: [macosx] Possibility to set the same frame for the different screens
+  - S8019625: Test compiler/8005956/PolynomialRoot.java timeouts on Solaris SPARCs
+  - S8019628: [macosx] closed/java/awt/Modal/BlockedMouseInputTest/BlockedMouseInputTest.html failed since 7u40b30 on MacOS
+  - S8019826: Test com/sun/management/HotSpotDiagnosticMXBean/SetVMOption.java fails with NPE
+  - S8019933: new hotspot build - hs24-b53
+  - S8019979: Replace CheckPackageAccess test with better one from closed repo
+  - S8020038: [macosx] Incorrect usage of invokeLater() and likes in callbacks called via JNI from AppKit thread
+  - S8020054: (tz) Support tzdata2013d
+  - S8020155: PSR:PERF G1 not collecting old regions when humongous allocations interfer
+  - S8020215: Different execution plan when using JIT vs interpreter
+  - S8020228: Restore the translated version of logging_xx.properties
+  - S8020298: [macosx] Incorrect merge in the lwawt code
+  - S8020319: Update Japanese man pages for 7u40
+  - S8020371: [macosx] applets with Drag and Drop fail with IllegalArgumentException
+  - S8020381: new hotspot build - hs24-b54
+  - S8020425: Product options incorrectly removed in minor version
+  - S8020430: NullPointerException in xml sqe nightly result on 2013-07-12
+  - S8020433: Crash when using -XX:+RestoreMXCSROnJNICalls
+  - S8020498: Crash when both libnet.so and libmawt.so are loaded
+  - S8020525: Increment build # of hs23.25 to b03 for 7u25-b34 psu
+  - S8020547: Event based tracing needs a UNICODE string type
+  - S8020625: [TESTBUG] java/util/HashMap/OverrideIsEmpty.java doesn't compile for jdk7u
+  - S8020701: Avoid crashes in WatcherThread
+  - S8020796: new hotspot build - hs24-b55
+  - S8020811: [macosx] Merge fault 7u25-7u40: Missed focus fix JDK-8012330
+  - S8020940: Valid OCSP responses are rejected for backdated enquiries
+  - S8020983: OutOfMemoryError caused by non garbage collected JPEGImageWriter Instances
+  - S8021008: Provide java and jcmd man pages for Mac (OpenJDK)
+  - S8021148: Regression in SAXParserImpl in 7u40 b34 (NPE)
+  - S8021353: Event based tracing is missing thread exit
+  - S8021381: JavaFX scene included in Swing JDialog not starting from Web Start
+  - S8021565: new hotspot build - hs24-b56
+  - S8021946: Disabling sun.reflect.Reflection.getCallerCaller(int) by default breaks several frameworks and libraries
+  - S8022548: SPECJVM2008 has errors introduced in 7u40-b34
+  - S8023751: Need to backout 8020943, was pushed to hs24 without approval
+
 New in release 2.4.1 (2013-07-05):
 
 * Security fixes
@@ -30,7 +131,7 @@ New in release 2.4.1 (2013-07-05):
   - S8001308: Update display of applet windows
   - S8001309: Better handling of annotation interfaces
   - S8001318, CVE-2013-2447: Socket.getLocalAddress not consistent with InetAddress.getLocalHost
-  - S8001330, CVE-2013-2443: Improve on checking order (non-Zero builds only)
+  - S8001330, CVE-2013-2443: Improve on checking order
   - S8003703, CVE-2013-2412: Update RMI connection dialog box
   - S8004288, CVE-2013-2449: (fs) Files.probeContentType problems
   - S8004584: Augment applet contextualization
@@ -1054,11 +1155,8 @@ OpenJDK
   - S8005556: java/net/Socks/SocksV4Test.java is missing @run tag
   - S8005646: TEST_BUG: java/rmi/activation/ActivationSystem/unregisterGroup/UnregisterGroup leaves process running
   - S8005920: After pressing combination Windows Key and M key, the frame, the instruction and the dialog can't be minimized.
-  - S8005943: (process) Improved Runtime.exec
   - S8006120: Provide "Server JRE" for 7u train
-  - S8006309: More reliable control panel operation
   - S8006417: JComboBox.showPopup(), hidePopup() fails in JRE 1.7 on OS X
-  - S8006435: Improvements in JMX
   - S8006534: CLONE - TestLibrary.getUnusedRandomPort() fails intermittently-doesn't retry enough times
   - S8006536: [launcher]  removes trailing slashes on arguments
   - S8006560: java/net/ipv6tests/B6521014.java fails intermittently
@@ -1066,19 +1164,10 @@ OpenJDK
   - S8006669: sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/PostThruProxy.sh fails on mac
   - S8006753: fix failed for JDK-8002415 White box testing API for HotSpot
   - S8006777: Improve TLS handling of invalid messages
-  - S8006790: Improve checking for windows
-  - S8006795: Improve font warning messages
-  - S8007014: Improve image handling
-  - S8007406: Improve accessibility of AccessBridge
   - S8007515: TEST_BUG: update ProblemList.txt and TEST.ROOT in jdk7u-dev to match jdk8
-  - S8007617: Better validation of images
-  - S8007667: Better image reading
-  - S8007675: Improve color conversion
   - S8007688: Blacklist known bad certificate
   - S8007701: Hotspot trace allocation events
-  - S8007918: Better image writing
   - S8008081: Print outs do not have matching arguments
-  - S8008140: Better method handle resolution
   - S8008223: java/net/BindException/Test.java fails rarely
   - S8008249: Sync ICU into JDK :
   - S8008379: TEST_BUG: Fail automatically with java.lang.NullPointerException.
@@ -1088,18 +1177,13 @@ OpenJDK
   - S8008920: Tracing events for heap statistics
   - S8009032: Implement evacuation info event
   - S8009165: Fix for 8008817 needs revision
-  - S8009305: Improve AWT data transfer
   - S8009399: Bump the hsx build number for APRIL CPU
   - S8009460: C2compiler crash in machnode::in_regmask(unsigned int)
   - S8009463: Regression test test\java\lang\Runtime\exec\ArgWithSpaceAndFinalBackslash.java failing.
   - S8009530: ICU Kern table support broken
   - S8009610: Blacklist certificate used with malware.
   - S8009634: TEST_BUG: sun/misc/Version/Version.java handle 2 digit minor in VM version
-  - S8009677: Better setting of setters
-  - S8009699: Methodhandle lookup
   - S8009750: javax/xml/crypto/dsig/SecurityManager/XMLDSigWithSecMgr.java should run in other vm mode
-  - S8009814: Better driver management
-  - S8009857: Problem with plugin
   - S8009881: TEST_BUG: javax/swing/JTree/8004298/bug8004298.java should be modified
   - S8010166: TEST_BUG: fix for 8009634 overlooks possible version strings (sun/misc/Version/Version.java)
   - S8010294: Refactor HeapInspection to make it more reusable
