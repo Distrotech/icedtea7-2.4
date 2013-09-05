@@ -1,5 +1,9 @@
 2013-07-24  Andrew John Hughes  <gnu.andrew@member.fsf.org>
 
+	* NEWS: Mention LCMS 2 change.
+
+2013-07-24  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+
 	* acinclude.m4:
 	(IT_CHECK_FOR_LCMS): Turn system LCMS back on by
 	default if the version is 2.5 or above with the

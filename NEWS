@@ -14,6 +14,7 @@ CVE-XXXX-YYYY: http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=XXXX-YYYY
 
 New in release 2.4.2 (2013-XX-XX):
 
+* System LCMS 2 support again enabled by default, requiring 2.5 or above.
 * OpenJDK
   - S7122222: GC log is limited to 2G for 32-bit
   - S7162400: Intermittent java.io.IOException: Bad file number during HotSpotVirtualMachine.executeCommand
