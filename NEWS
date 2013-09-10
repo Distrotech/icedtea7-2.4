@@ -122,6 +122,10 @@ New in release 2.4.2 (2013-XX-XX):
   - PR1552: Add -D_LITTLE_ENDIAN for ARM architectures.
   - PR1553: Add Debian AArch64 support
   - PR1554: Fix build on Mac OS X
+* Bug fixes
+  - RH661505: JPEGs with sRGB IEC61966-2.1 color profiles have wrong colors
+  - RH995488: Java thinks that the default timezone is Busingen instead of Zurich
+  - Cleanup file resources properly in TimeZone_md.
 
 New in release 2.4.1 (2013-07-05):
 

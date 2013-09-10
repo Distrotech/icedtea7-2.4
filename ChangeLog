@@ -1,5 +1,14 @@
 2013-09-09  Andrew John Hughes  <gnu.andrew@redhat.com>
 
+	* Makefile.am:
+	(JDK_CHANGESET): Update to final icedtea-2.4.2
+	tag.
+	(JDK_SHA256SUM): Likewise.
+	* NEWS: Update with additional JDK bug fixes
+	RH661505 & RH995488.
+
+2013-09-09  Andrew John Hughes  <gnu.andrew@redhat.com>
+
 	* NEWS: Mention RH991170, PR1536, PR1551, PR1552,
 	PR1553 and PR1554.
 	* acinclude.m4:
