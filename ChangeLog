@@ -1,3 +1,7 @@
+2013-09-20  Andrew John Hughes  <gnu.andrew@redhat.com>
+
+	* NEWS: Cleanup.
+
 2013-09-17  Xerxes Rånby  <xerxes@zafena.se>
 	    Robert Lougher  <rob@jamvm.org.uk>
 
@@ -12,7 +16,7 @@
 	* Makefile.am
 	(JAMVM_VERSION): Updated JamVM to 2013-08-28 revision.
 	(JAMVM_SHA256SUM): Updated.
-	
+
 2013-08-14  Xerxes Rånby  <xerxes@zafena.se>
 	    Robert Lougher  <rob@jamvm.org.uk>
 
