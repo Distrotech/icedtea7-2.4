@@ -1,3 +1,7 @@
+2013-09-20  Andrew John Hughes  <gnu.andrew@redhat.com>
+
+	* NEWS: List PR1410, G478484 and G477456.
+
 2013-05-28  Andrew John Hughes  <gnu.andrew@member.fsf.org>
 
 	PR1410: Icedtea 2.3.9 fails to build using icedtea 1.12.4
