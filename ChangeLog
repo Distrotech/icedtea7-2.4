@@ -1,5 +1,10 @@
 2013-09-20  Andrew John Hughes  <gnu.andrew@redhat.com>
 
+	* NEWS: Set release date.
+	* configure.ac: Bump to 2.4.2 proper.
+
+2013-09-20  Andrew John Hughes  <gnu.andrew@redhat.com>
+
 	* hotspot.map: Bump to match new 2.4.2 release tag.
 	* NEWS: Mention HotSpot changes brought in.
 
