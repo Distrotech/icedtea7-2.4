@@ -112,9 +112,11 @@ New in release 2.4.2 (2013-XX-XX):
   - S8021353: Event based tracing is missing thread exit
   - S8021381: JavaFX scene included in Swing JDialog not starting from Web Start
   - S8021565: new hotspot build - hs24-b56
+  - S8021771: warning stat64 is deprecated - when building on OSX 10.7.5
   - S8021946: Disabling sun.reflect.Reflection.getCallerCaller(int) by default breaks several frameworks and libraries
   - S8022548: SPECJVM2008 has errors introduced in 7u40-b34
   - S8023751: Need to backout 8020943, was pushed to hs24 without approval
+  - S8024914: Swapped usage of idx_t and bm_word_t types in bitMap.inline.hpp
 * New features
   - RH991170: java does not use correct kerberos credential cache
   - PR1536: Allow use of system Kerberos to obtain cache location
@@ -128,7 +130,11 @@ New in release 2.4.2 (2013-XX-XX):
   - Cleanup file resources properly in TimeZone_md.
   - PR1410: Icedtea 2.3.9 fails to build using icedtea 1.12.4
   - G477456: emerge fails on pax system: java attempts RWX map, paxctl -m missing
-  - G478484: patches/boot/ecj-diamond.patch FAILED 
+  - G478484: patches/boot/ecj-diamond.patch FAILED
+  - Fix Zero following changes to entry_frame_call_wrapper in 8016131
+  - Set ZERO_BUILD in flags.make so it is set on rebuilds
+  - Cast should use same type as GCDrainStackTargetSize (uintx).
+  - Add casts to fix build on S390
 * JamVM
   - JSR292: Invoke Dynamic
   - sun.misc.Unsafe: additional methods get/putAddress: allows JamVM with OpenJDK 7/8 to run recent versions of JEdit.

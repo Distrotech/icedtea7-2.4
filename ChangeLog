@@ -1,5 +1,10 @@
 2013-09-20  Andrew John Hughes  <gnu.andrew@redhat.com>
 
+	* hotspot.map: Bump to match new 2.4.2 release tag.
+	* NEWS: Mention HotSpot changes brought in.
+
+2013-09-20  Andrew John Hughes  <gnu.andrew@redhat.com>
+
 	* NEWS: List PR1410, G478484 and G477456.
 
 2013-05-28  Andrew John Hughes  <gnu.andrew@member.fsf.org>
