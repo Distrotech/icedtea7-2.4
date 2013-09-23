@@ -1,3 +1,8 @@
+2013-09-23  Andrew John Hughes  <gnu.andrew@redhat.com>
+
+	* NEWS: Add 2.4.3 section.
+	* configure.ac: Bump to 2.4.3pre.
+
 2013-09-20  Andrew John Hughes  <gnu.andrew@redhat.com>
 
 	* NEWS: Set release date.

@@ -12,6 +12,8 @@ JEPX - http://openjdk.java.net/jeps/X
 
 CVE-XXXX-YYYY: http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=XXXX-YYYY
 
+New in release 2.4.3 (2013-10-XX):
+
 New in release 2.4.2 (2013-09-20):
 
 * System LCMS 2 support again enabled by default, requiring 2.5 or above.
@@ -132,7 +134,7 @@ New in release 2.4.2 (2013-09-20):
   - G477456: emerge fails on pax system: java attempts RWX map, paxctl -m missing
   - G478484: patches/boot/ecj-diamond.patch FAILED
   - Fix Zero following changes to entry_frame_call_wrapper in 8016131
-  - Set ZERO_BUILD in flags.make so it is set on rebuilds
+  - RH1008988: Set ZERO_BUILD in flags.make so it is set on rebuilds
   - Cast should use same type as GCDrainStackTargetSize (uintx).
   - Add casts to fix build on S390
 * JamVM
