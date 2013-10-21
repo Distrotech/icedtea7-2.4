@@ -1,5 +1,10 @@
 2013-10-21  Andrew John Hughes  <gnu.andrew@redhat.com>
 
+	* configure.ac: Set to 2.4.3.
+	* NEWS: Set date.
+
+2013-10-21  Andrew John Hughes  <gnu.andrew@redhat.com>
+
 	* Makefile.am:
 	(JDK_UPDATE_VERSION): Bump to 45.
 	(BUILD_VERSION): Bump to b31.
