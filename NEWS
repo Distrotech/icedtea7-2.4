@@ -102,8 +102,8 @@ New in release 2.4.3 (2013-10-21):
   - S8024369: Increment build # of hs24.0 to b57 for 7u40-b61 psu
   - S8024668: api/java_nio/charset/Charset/index.html#Methods JCK-runtime test fails with 7u45 b11
   - S8024697: Fix for 8020983 causes Xcheck:jni warnings
-  - S8024863: X11: Support GNOME Shell as mutter
-  - S8024883: (se) SelectableChannel.register throws NPE if fd >= 64k (lnx)
+  - S8024863, PR1400: X11: Support GNOME Shell as mutter
+  - S8024883, RH1011051: (se) SelectableChannel.register throws NPE if fd >= 64k (lnx)
   - S8025128: File.createTempFile fails if prefix is absolute path
   - S8025170: jdk7u51 7u-1-prebuild is failing since 9/19
 * Bug fixes
