@@ -1,0 +1,15 @@
+diff -ur a/openjdk/jdk/make/common/shared/Defs-linux.gmk b/openjdk/jdk/make/common/shared/Defs-linux.gmk
+--- a/openjdk/jdk/make/common/shared/Defs-linux.gmk	2013-07-25 18:10:09.000000000 +0200
++++ b/openjdk/jdk/make/common/shared/Defs-linux.gmk	2013-12-02 02:59:29.837178730 +0200
+@@ -27,6 +27,11 @@
+ # Definitions for Linux.
+ #
+ 
++#Flags added by distrotech to handle X11R7 and other bits
++OTHER_CFLAGS   =       -I=/usr/include/glib-2.0 -I=/usr/include/PCSC -I=/usr/include/gtk-2.0 \
++                       -I=/usr/include/cairo -I=/usr/include/freetype2 -I=/usr/X11R7/include -I=/usr/X11R7/include/X11/extensions
++OTHER_CPPFLAGS =       $(OTHER_CFLAGS)
++
+ # Default for COMPILER_WARNINGS_FATAL on Linux (C & C++ compiler warnings)
+ ifndef COMPILER_WARNINGS_FATAL
+   COMPILER_WARNINGS_FATAL=false

@@ -1,0 +1,59 @@
+diff -ur a/openjdk/hotspot/src/os/linux/vm/os_linux.cpp b/openjdk/hotspot/src/os/linux/vm/os_linux.cpp
+--- a/openjdk/hotspot/src/os/linux/vm/os_linux.cpp	2013-10-16 16:17:08.000000000 +0200
++++ b/openjdk/hotspot/src/os/linux/vm/os_linux.cpp	2013-12-02 11:18:53.757440887 +0200
+@@ -2028,9 +2028,11 @@
+     static  Elf32_Half running_arch_code=EM_SH;
+   #elif  (defined AARCH64)
+     static  Elf32_Half running_arch_code=EM_AARCH64;
++  #elif (defined ILP32)
++    static  Elf32_Half running_arch_code=EM_X86_64;
+   #else
+     #error Method os::dll_load requires that one of following is defined:\
+-         IA32, AMD64, IA64, __sparc, __powerpc__, ARM, S390, ALPHA, MIPS, MIPSEL, PARISC, M68K, SH
++         IA32, AMD64, IA64, __sparc, __powerpc__, ARM, S390, ALPHA, MIPS, MIPSEL, PARISC, M68K, SH, AARCH64, ILP32
+   #endif
+ 
+   // Identify compatability class for VM's architecture and library's architecture
+diff -ur a/openjdk/jdk/make/common/Defs-linux.gmk b/openjdk/jdk/make/common/Defs-linux.gmk
+--- a/openjdk/jdk/make/common/Defs-linux.gmk	2013-10-16 16:17:14.000000000 +0200
++++ b/openjdk/jdk/make/common/Defs-linux.gmk	2013-12-02 11:18:53.758440907 +0200
+@@ -444,8 +444,12 @@
+ ifeq ($(ARCH), amd64)
+ override OPENWIN_LIB             = $(OPENWIN_HOME)/lib64
+ else
++ifeq ($(ARCH), ilp32)
++override OPENWIN_LIB             = $(OPENWIN_HOME)/libx32
++else
+ override OPENWIN_LIB             = $(OPENWIN_HOME)/lib
+ endif
++endif
+ override OTHER_M4FLAGS           = -D__GLIBC__ -DGNU_ASSEMBLER
+ override SUN_CMM_SUBDIR          =
+ override THREADS_FLAG            = native
+diff -ur a/openjdk/jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c b/openjdk/jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c
+--- a/openjdk/jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	2013-10-16 16:17:14.000000000 +0200
++++ b/openjdk/jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	2013-12-02 11:18:53.758440907 +0200
+@@ -35,7 +35,9 @@
+ #endif
+ #ifdef __linux__
+ #include <unistd.h>
++#ifndef __ILP32__
+ #include <sys/sysctl.h>
++#endif
+ #include <sys/utsname.h>
+ #include <netinet/ip.h>
+ 
+diff -ur a/openjdk/jdk/src/solaris/native/java/net/PlainSocketImpl.c b/openjdk/jdk/src/solaris/native/java/net/PlainSocketImpl.c
+--- a/openjdk/jdk/src/solaris/native/java/net/PlainSocketImpl.c	2013-10-16 16:17:14.000000000 +0200
++++ b/openjdk/jdk/src/solaris/native/java/net/PlainSocketImpl.c	2013-12-02 11:18:53.759440927 +0200
+@@ -43,8 +43,10 @@
+ #endif
+ #ifdef __linux__
+ #include <unistd.h>
++#ifndef __ILP32__
+ #include <sys/sysctl.h>
+ #endif
++#endif
+ 
+ #include "jvm.h"
+ #include "jni_util.h"
