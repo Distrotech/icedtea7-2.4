@@ -1,0 +1,11 @@
+--- a/openjdk/jdk/make/common/shared/Defs-linux.gmk	2013-12-02 13:21:00.125451340 +0000
++++ b/openjdk/jdk/make/common/shared/Defs-linux.gmk	2013-12-02 13:21:11.585451340 +0000
+@@ -112,7 +112,7 @@
+ ifneq ($(ALT_OPENWIN_HOME),)
+   OPENWIN_HOME :=$(call PrefixPath,$(ALT_OPENWIN_HOME))
+ else
+-  OPENWIN_HOME  =/usr/X11R6/
++  OPENWIN_HOME  =/usr/X11R7/
+ endif
+ 
+ # DEVTOOLS_PATH: for other tools required for building (such as zip, etc.)
