@@ -2,10 +2,19 @@ AC_DEFUN([IT_SET_ARCH_SETTINGS],
 [
   case "${host_cpu}" in
     x86_64)
-      BUILD_ARCH_DIR=amd64
-      INSTALL_ARCH_DIR=amd64
-      JRE_ARCH_DIR=amd64
-      ARCHFLAG="-m64"
+      case ${host_os} in
+        *gnux32)
+          ARCHFLAG="-mx32"
+          BUILD_ARCH_DIR=ilp32
+          INSTALL_ARCH_DIR=ilp32
+          JRE_ARCH_DIR=ilp32
+        ;;
+        *)ARCHFLAG="-m64" 
+          BUILD_ARCH_DIR=amd64
+          INSTALL_ARCH_DIR=amd64
+          JRE_ARCH_DIR=amd64
+        ;;
+      esac;
       ;;
     i?86)
       BUILD_ARCH_DIR=i586
