@@ -1,0 +1,51 @@
+diff -ur a/openjdk/jdk/make/launchers/Makefile.launcher b/openjdk/jdk/make/launchers/Makefile.launcher
+--- a/openjdk/jdk/make/launchers/Makefile.launcher	2012-07-25 19:24:09.000000000 +0200
++++ b/openjdk/jdk/make/launchers/Makefile.launcher	2013-12-02 00:49:31.160825186 +0200
+@@ -164,7 +164,7 @@
+   ifneq ($(PLATFORM), windows)
+     ifneq ($(PLATFORM), macosx)
+       # Anything with a GUI needs X11 to be linked in.
+-      OTHER_LDLIBS += -L$(OPENWIN_LIB) -lX11
++      OTHER_LDLIBS += -L=$(OPENWIN_LIB) -lX11
+     endif
+   endif
+ endif
+diff -ur a/openjdk/jdk/make/sun/splashscreen/Makefile b/openjdk/jdk/make/sun/splashscreen/Makefile
+--- a/openjdk/jdk/make/sun/splashscreen/Makefile	2012-07-25 19:24:09.000000000 +0200
++++ b/openjdk/jdk/make/sun/splashscreen/Makefile	2013-12-02 00:49:31.161825206 +0200
+@@ -89,8 +89,8 @@
+                 -I$(OPENWIN_HOME)/include/X11/extensions
+     OTHER_LDLIBS += -L$(OPENWIN_LIB) -lX11 -lXext $(LIBM) -pthread
+   else
+-    CPPFLAGS += -I$(OPENWIN_HOME)/include -I$(OPENWIN_HOME)/include/X11/extensions
+-    OTHER_LDLIBS += -L$(OPENWIN_LIB) -lX11 -lXext $(LIBM) -lpthread
++    CPPFLAGS += -I=$(OPENWIN_HOME)/include -I=$(OPENWIN_HOME)/include/X11/extensions
++    OTHER_LDLIBS += -L=$(OPENWIN_LIB) -lX11 -lXext $(LIBM) -lpthread
+   endif
+ else # PLATFORM
+   CFLAGS += -DWITH_WIN32
+diff -ur a/openjdk/jdk/make/sun/xawt/Makefile b/openjdk/jdk/make/sun/xawt/Makefile
+--- a/openjdk/jdk/make/sun/xawt/Makefile	2012-07-25 19:24:09.000000000 +0200
++++ b/openjdk/jdk/make/sun/xawt/Makefile	2013-12-02 00:49:31.161825206 +0200
+@@ -51,7 +51,7 @@
+ AUTO_FILES_JAVA_DIRS = sun/awt/X11
+ AUTO_JAVA_PRUNE = WrapperGenerator.java
+ 
+-LDFLAGS += -L$(OPENWIN_LIB)
++LDFLAGS += -L=$(OPENWIN_LIB)
+ 
+ # For Xrender extension.
+ ifeq ($(PLATFORM), solaris)
+@@ -203,9 +203,9 @@
+     # Allows for builds on Debian GNU Linux, X11 is in a different place 
+     # This should really be handled at a higher-level so we don't have to
+     # work-around this when cross-compiling
+-    CPPFLAGS += -I/usr/X11R6/include/X11/extensions \
+-                -I/usr/include/X11/extensions \
+-                -I$(OPENWIN_HOME)/include 
++    CPPFLAGS += -I=/usr/X11R6/include/X11/extensions \
++                -I=/usr/include/X11/extensions \
++                -I=$(OPENWIN_HOME)/include 
+   else
+     CPPFLAGS += -I$(OPENWIN_HOME)/include/X11/extensions \
+                 -I$(OPENWIN_HOME)/include 

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir -p ${3}/usr/${B_LIBDIRS}/jvm/
+
+rsync -avP openjdk.build/j2re-image/ ${3}/usr/${B_LIBDIRS}/jvm/jre-${JAVA_VER}/
+rsync -avP openjdk.build/j2sdk-image/ ${3}/usr/${B_LIBDIRS}/jvm/jdk-${JAVA_VER}/
