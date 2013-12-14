@@ -14,6 +14,12 @@ CVE-XXXX-YYYY: http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=XXXX-YYYY
 
 New in release 2.4.4 (2014-XX-XX):
 
+* Backports
+  - S8025255: (tz) Support tzdata2013g
+* Bug fixes
+  - PR1618: Include defs.make in vm.make so VM_LITTLE_ENDIAN is defined on Zero builds
+  - D729448: 32-bit alignment on mips and mipsel
+
 New in release 2.4.3 (2013-10-21):
 
 * Security fixes
