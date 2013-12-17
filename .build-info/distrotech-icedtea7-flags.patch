@@ -1,7 +1,6 @@
-diff -ur a/openjdk/jdk/make/common/shared/Defs-linux.gmk b/openjdk/jdk/make/common/shared/Defs-linux.gmk
---- a/openjdk/jdk/make/common/shared/Defs-linux.gmk	2013-07-25 18:10:09.000000000 +0200
-+++ b/openjdk/jdk/make/common/shared/Defs-linux.gmk	2013-12-02 02:59:29.837178730 +0200
-@@ -27,6 +27,11 @@
+--- a/openjdk/jdk/make/common/shared/Defs-linux.gmk	2013-12-17 06:33:38.940107187 +0000
++++ b/openjdk/jdk/make/common/shared/Defs-linux.gmk	2013-12-17 06:40:25.087224127 +0000
+@@ -27,6 +27,22 @@
  # Definitions for Linux.
  #
  
@@ -9,6 +8,17 @@ diff -ur a/openjdk/jdk/make/common/shared/Defs-linux.gmk b/openjdk/jdk/make/comm
 +OTHER_CFLAGS   =       -I=/usr/include/glib-2.0 -I=/usr/include/PCSC -I=/usr/include/gtk-2.0 \
 +                       -I=/usr/include/cairo -I=/usr/include/freetype2 -I=/usr/X11R7/include -I=/usr/X11R7/include/X11/extensions
 +OTHER_CPPFLAGS =       $(OTHER_CFLAGS)
++ifeq ($(ARCH), amd64)
++OTHER_LDFLAGS  +=      -L=/usr/lib64 -L=/usr/lib64/x86_64
++else
++ifeq ($(ARCH), ilp32)
++OTHER_LDFLAGS  +=      -L=/usr/libx32 -L=/usr/libx32/i386
++else
++ifeq ($(ARCH), i586)
++OTHER_LDFLAGS  +=      -L=/usr/lib -L=/usr/lib/i386
++endif
++endif
++endif
 +
  # Default for COMPILER_WARNINGS_FATAL on Linux (C & C++ compiler warnings)
  ifndef COMPILER_WARNINGS_FATAL
