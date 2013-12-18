@@ -19,6 +19,7 @@ New in release 2.4.4 (2014-XX-XX):
 * Bug fixes
   - PR1618: Include defs.make in vm.make so VM_LITTLE_ENDIAN is defined on Zero builds
   - D729448: 32-bit alignment on mips and mipsel
+  - PR1623: Collision between OpenJDK 6 & 7 classes when bootstrapping with OpenJDK 6
 
 New in release 2.4.3 (2013-10-21):
 

@@ -1,3 +1,13 @@
+2013-12-17  Andrew John Hughes  <gnu.andrew@redhat.com>
+
+	* Makefile.am:
+	(ICEDTEA_BOOT_PATCHES): Enable new patch when
+	not using bootstrap tools.
+	* NEWS: Updated.
+	* patches/boot/openjdk6-prefer_source.patch:
+	Pass -Xprefer:source to just-built javac.  The
+	bootstrap version already has it in javac.in.
+
 2013-12-12  Andrew John Hughes  <gnu.andrew@redhat.com>
 
 	* Makefile.am:

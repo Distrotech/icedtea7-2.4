@@ -1,0 +1,58 @@
+diff -r 18ee4113fc37 make/com/sun/crypto/provider/Makefile
+--- openjdk-boot/jdk/make/com/sun/crypto/provider/Makefile	Fri Nov 08 19:32:09 2013 +0000
++++ openjdk-boot/jdk/make/com/sun/crypto/provider/Makefile	Tue Dec 17 17:42:08 2013 +0000
+@@ -113,6 +113,7 @@
+   endif
+ endif
+ 
++OTHER_JAVACFLAGS += -Xprefer:source
+ include $(BUILDDIR)/common/Defs.gmk
+ 
+ #
+diff -r 18ee4113fc37 make/java/jar/Makefile
+--- openjdk-boot/jdk/make/java/jar/Makefile	Fri Nov 08 19:32:09 2013 +0000
++++ openjdk-boot/jdk/make/java/jar/Makefile	Tue Dec 17 17:42:08 2013 +0000
+@@ -26,6 +26,8 @@
+ BUILDDIR = ../..
+ PACKAGE = java.util.jar
+ PRODUCT = sun
++
++OTHER_JAVACFLAGS += -Xprefer:source
+ include $(BUILDDIR)/common/Defs.gmk
+ 
+ #
+diff -r 18ee4113fc37 make/sun/nio/cs/Makefile
+--- openjdk-boot/jdk/make/sun/nio/cs/Makefile	Fri Nov 08 19:32:09 2013 +0000
++++ openjdk-boot/jdk/make/sun/nio/cs/Makefile	Tue Dec 17 17:42:08 2013 +0000
+@@ -36,7 +36,7 @@
+ # This re-directs all the class files to a separate location
+ CLASSDESTDIR = $(TEMPDIR)/classes
+ 
+-OTHER_JAVACFLAGS += -Xlint:serial,-deprecation
++OTHER_JAVACFLAGS += -Xlint:serial,-deprecation -Xprefer:source
+ include $(BUILDDIR)/common/Defs.gmk
+ 
+ #
+diff -r 18ee4113fc37 make/sun/security/other/Makefile
+--- openjdk-boot/jdk/make/sun/security/other/Makefile	Fri Nov 08 19:32:09 2013 +0000
++++ openjdk-boot/jdk/make/sun/security/other/Makefile	Tue Dec 17 17:42:08 2013 +0000
+@@ -26,6 +26,8 @@
+ BUILDDIR = ../../..
+ PACKAGE = sun.security.other
+ PRODUCT = sun
++
++OTHER_JAVACFLAGS += -Xprefer:source
+ include $(BUILDDIR)/common/Defs.gmk
+ 
+ #
+diff -r 18ee4113fc37 make/sun/security/pkcs11/Makefile
+--- openjdk-boot/jdk/make/sun/security/pkcs11/Makefile	Fri Nov 08 19:32:09 2013 +0000
++++ openjdk-boot/jdk/make/sun/security/pkcs11/Makefile	Tue Dec 17 17:42:08 2013 +0000
+@@ -110,6 +110,7 @@
+   endif
+ endif
+ 
++OTHER_JAVACFLAGS += -Xprefer:source
+ include $(BUILDDIR)/common/Defs.gmk
+ 
+ #

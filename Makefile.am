@@ -341,9 +341,10 @@ ICEDTEA_BOOT_PATCHES = \
 	patches/boot/xsltproc.patch \
 	patches/boot/ecj-odd.patch
 
-if !DISABLE_BOOTSTRAP_TOOLS
-ICEDTEA_BOOT_PATCHES += \
-	patches/boot/bootstrap-tools.patch
+if DISABLE_BOOTSTRAP_TOOLS
+ICEDTEA_BOOT_PATCHES += patches/boot/openjdk6-prefer_source.patch
+else
+ICEDTEA_BOOT_PATCHES += patches/boot/bootstrap-tools.patch
 endif
 
 if !VM_SUPPORTS_XBOOTCLASSPATH
