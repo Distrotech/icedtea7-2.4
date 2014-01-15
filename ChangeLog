@@ -1,3 +1,7 @@
+2014-01-14  Andrew John Hughes  <gnu.andrew@redhat.com>
+
+	* NEWS: Add missing entry.
+
 2014-01-14  Omair Majid  <omajid@redhat.com>
 
 	* configure.ac: Set to 2.4.4.
