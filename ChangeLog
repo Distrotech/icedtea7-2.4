@@ -1,5 +1,10 @@
 2014-01-14  Omair Majid  <omajid@redhat.com>
 
+	* configure.ac: Set to 2.4.4.
+	* NEWS: Set date.
+
+2014-01-14  Omair Majid  <omajid@redhat.com>
+
 	* Makefile.am:
 	(CORBA_CHANGESET): Update to IcedTea 2.4.4 tag.
 	(JAXP_CHANGESET): Likewise.
