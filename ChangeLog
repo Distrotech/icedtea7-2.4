@@ -1,3 +1,9 @@
+2014-01-15  Andrew John Hughes  <gnu.andrew@redhat.com>
+
+	* patches/boot/ecj-multicatch.patch:
+	Add new cases in RSAClientKeyExchange
+	and Handshaker.
+
 2014-01-14  Andrew John Hughes  <gnu.andrew@redhat.com>
 
 	* NEWS: Add missing entry.
