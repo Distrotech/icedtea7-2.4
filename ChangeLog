@@ -1,5 +1,9 @@
 2014-01-22  Andrew John Hughes  <gnu.andrew@redhat.com>
 
+	* NEWS: Remove bug IDs not in repository.
+
+2014-01-22  Andrew John Hughes  <gnu.andrew@redhat.com>
+
 	* configure.ac: Bump to 2.4.5pre.
 	* NEWS: Add 2.4.5 section.
 

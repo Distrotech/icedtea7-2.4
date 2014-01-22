@@ -21,8 +21,8 @@ New in release 2.4.4 (2014-01-14):
   - S7068126, CVE-2014-0373: Enhance SNMP statuses
   - S8010935: Better XML handling
   - S8011786, CVE-2014-0368: Better applet networking
-  - S8021257, S8025022, CVE-2013-5896 : com.sun.corba.se.** should be on restricted package list
-  - S8021271, S8021266, CVE-2014-0408: Better buffering in ObjC code
+  - S8021257, CVE-2013-5896: com.sun.corba.se.** should be on restricted package list
+  - S8021271, CVE-2014-0408: Better buffering in ObjC code
   - S8022904: Enhance JDBC Parsers
   - S8022927: Input validation for byte/endian conversions
   - S8022935: Enhance Apache resolver classes
