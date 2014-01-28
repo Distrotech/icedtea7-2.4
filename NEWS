@@ -14,6 +14,40 @@ CVE-XXXX-YYYY: http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=XXXX-YYYY
 
 New in release 2.4.5 (2014-01-XX):
 
+* Backports
+  - S8015976: OpenJDK part of bug JDK-8015812 [TEST_BUG] Tests have conflicting test descriptions
+  - S8022698: javax/script/GetInterfaceTest.java fails since 7u45 b04 with -agentvm option
+  - S8022868: missing codepage Cp290 at java runtime
+  - S8023310: Thread contention in the method Beans.IsDesignTime()
+  - S8024461: [macosx] Java crashed on mac10.9 for swing and 2d function manual test
+  - S8025679: Increment minor version of HSx for 7u51 and initialize the build number
+  - S8026037: [TESTBUG] sun/security/tools/jarsigner/warnings.sh test fails on Solaris
+  - S8026304: jarsigner output bad grammar
+  - S8026772: test/sun/util/resources/TimeZone/Bug6317929.java failing
+  - S8026887: Make issues due to failed large pages allocations easier to debug
+  - S8027204: Revise the update of 8026204 and 8025758
+  - S8027224: test regression - ClassNotFoundException
+  - S8027370: Support tzdata2013h
+  - S8027378: Two closed/javax/xml/8005432 fails with jdk7u51b04
+  - S8027787: 7u51 l10n resource file translation update 1
+  - S8027837: JDK-8021257 causes CORBA build failure on emdedded platforms
+  - S8027943: serial version of com.sun.corba.se.spi.orbutil.proxy.CompositeInvocationHandlerImpl changed in 7u45
+  - S8027944: Increment hsx 24.51 build to b02 for 7u51-b07
+  - S8028057: Modify jarsigner man page documentation to document CCC 8024302: Clarify jar verifications
+  - S8028090: reverting change - changeset pushed with incorrect commit message, linked to wrong issue
+  - S8028111: XML readers share the same entity expansion counter
+  - S8028215: ORB.init fails with SecurityException if properties select the JDK default ORB
+  - S8028293: Check local configuration for actual ephemeral port range
+  - S8028382: Two javax/xml/8005433 tests still fail after the fix JDK-8028147
+  - S8028453: AsynchronousSocketChannel.connect() requires SocketPermission due to bind to local address (win)
+  - S8028823: java/net/Makefile tabs converted to spaces
+  - S8029038: Revise fix for XML readers share the same entity expansion counter
+  - S8029842: Increment hsx 24.51 build to b03 for 7u51-b11
+* Bug fixes
+  - Fix broken bootstrap build by updating ecj-multicatch.patch
+  - PR1653: Support ppc64le via Zero
+  - PR1654: ppc32 needs a larger ThreadStackSize to build
+
 New in release 2.4.4 (2014-01-14):
 
 * Security fixes
