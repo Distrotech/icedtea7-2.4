@@ -12,7 +12,7 @@ JEPX - http://openjdk.java.net/jeps/X
 
 CVE-XXXX-YYYY: http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=XXXX-YYYY
 
-New in release 2.4.5 (2014-01-XX):
+New in release 2.4.5 (2014-01-28):
 
 * Backports
   - S8015976: OpenJDK part of bug JDK-8015812 [TEST_BUG] Tests have conflicting test descriptions

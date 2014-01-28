@@ -1,5 +1,10 @@
 2014-01-28  Andrew John Hughes  <gnu.andrew@redhat.com>
 
+	* configure.ac: Bump to 2.4.5.
+	* NEWS: Set release date to today.
+
+2014-01-28  Andrew John Hughes  <gnu.andrew@redhat.com>
+
 	* Makefile.am:
 	(BUILD_VERSION): Set to b31.
 	(CORBA_CHANGESET): Update to IcedTea 2.4 HEAD.
