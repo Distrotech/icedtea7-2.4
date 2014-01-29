@@ -47,6 +47,8 @@ New in release 2.4.5 (2014-01-28):
   - Fix broken bootstrap build by updating ecj-multicatch.patch
   - PR1653: Support ppc64le via Zero
   - PR1654: ppc32 needs a larger ThreadStackSize to build
+  - RH1015432: java-1.7.0-openjdk: Fails on PPC with StackOverflowError
+  - RH910107: fail to load PC/SC library
 
 New in release 2.4.4 (2014-01-14):
 

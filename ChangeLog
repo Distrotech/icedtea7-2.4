@@ -1,3 +1,11 @@
+2014-01-29  Andrew John Hughes  <gnu.andrew@redhat.com>
+
+	* Makefile.am,
+	(JDK_CHANGESET): Update to IcedTea 2.4 HEAD.
+	(JDK_SHA256SUM): Likewise.
+	* NEWS: Mention RH1015432 & RH910107.
+	* hotspot.map: Update to IcedTea 2.4 HEAD.
+
 2014-01-28  Andrew John Hughes  <gnu.andrew@redhat.com>
 
 	* configure.ac: Bump to 2.4.5.
