@@ -1,5 +1,9 @@
 2014-01-29  Andrew John Hughes  <gnu.andrew@redhat.com>
 
+	* NEWS: Bump release date to today.
+
+2014-01-29  Andrew John Hughes  <gnu.andrew@redhat.com>
+
 	* Makefile.am,
 	(JDK_CHANGESET): Update to IcedTea 2.4 HEAD.
 	(JDK_SHA256SUM): Likewise.
