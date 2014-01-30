@@ -1,3 +1,8 @@
+2014-01-28  Andrew John Hughes  <gnu.andrew@redhat.com>
+
+	* configure.ac: Bump to 2.4.6pre01.
+	* NEWS: Add 2.4.6 section.
+
 2014-01-29  Andrew John Hughes  <gnu.andrew@redhat.com>
 
 	* NEWS: Bump release date to today.
