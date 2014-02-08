@@ -5,7 +5,7 @@
    OPENWIN_HOME :=$(call PrefixPath,$(ALT_OPENWIN_HOME))
  else
 -  OPENWIN_HOME  =/usr/X11R6/
-+  OPENWIN_HOME  =/usr/X11R7/
++  OPENWIN_HOME  =/opt/Xorg
  endif
  
  # DEVTOOLS_PATH: for other tools required for building (such as zip, etc.)
