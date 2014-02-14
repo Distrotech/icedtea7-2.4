@@ -43,7 +43,7 @@ diff -ur a/openjdk/jdk/make/sun/xawt/Makefile b/openjdk/jdk/make/sun/xawt/Makefi
 -    CPPFLAGS += -I/usr/X11R6/include/X11/extensions \
 -                -I/usr/include/X11/extensions \
 -                -I$(OPENWIN_HOME)/include 
-+    CPPFLAGS += -I=/usr/X11R6/include/X11/extensions \
++    CPPFLAGS += -I=/opt/Xorg/include/X11/extensions \
 +                -I=/usr/include/X11/extensions \
 +                -I=$(OPENWIN_HOME)/include 
    else
