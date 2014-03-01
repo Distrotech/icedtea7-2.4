@@ -1,6 +1,7 @@
 #!/bin/bash
 
 case ${5} in
+  arm64)ARCHOPT="aarch64";;
   x86_32)ARCHOPT="ARCH=ilp32";;
 esac;
 
