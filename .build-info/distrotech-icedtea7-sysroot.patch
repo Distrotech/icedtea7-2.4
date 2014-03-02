@@ -49,3 +49,14 @@ diff -ur a/openjdk/jdk/make/sun/xawt/Makefile b/openjdk/jdk/make/sun/xawt/Makefi
    else
      CPPFLAGS += -I$(OPENWIN_HOME)/include/X11/extensions \
                  -I$(OPENWIN_HOME)/include 
+--- a/openjdk/jdk/make/sun/xawt/Makefile	2014-03-02 13:07:19.565884728 +0200
++++ b/openjdk/jdk/make/sun/xawt/Makefile	2014-03-02 13:07:30.739965146 +0200
+@@ -145,7 +145,7 @@
+ ifdef CUPS_CFLAGS
+   CPPFLAGS += $(CUPS_CFLAGS)
+ else
+-  CPPFLAGS += -I$(CUPS_HEADERS_PATH)
++  CPPFLAGS += -I=$(CUPS_HEADERS_PATH)
+ endif
+ 
+ CPPFLAGS += -DXAWT -DXAWT_HACK \
