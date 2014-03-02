@@ -57,3 +57,22 @@ diff -ur a/openjdk/jdk/src/solaris/native/java/net/PlainSocketImpl.c b/openjdk/j
  
  #include "jvm.h"
  #include "jni_util.h"
+--- a/openjdk/hotspot/make/defs.make	2014-03-02 10:24:39.614736893 +0200
++++ b/openjdk/hotspot/make/defs.make	2014-03-02 10:25:09.464946178 +0200
+@@ -254,7 +254,7 @@
+ 
+   # Use uname output for SRCARCH, but deal with platform differences. If ARCH
+   # is not explicitly listed below, it is treated as x86.
+-  SRCARCH     = $(ARCH/$(filter sparc sparc64 ia64 amd64 x86_64 arm ppc zero,$(ARCH)))
++  SRCARCH     = $(ARCH/$(filter sparc sparc64 ia64 amd64 x86_64 arm ppc ilp32 zero,$(ARCH)))
+   ARCH/       = x86
+   ARCH/sparc  = sparc
+   ARCH/sparc64= sparc
+@@ -264,6 +264,7 @@
+   ARCH/ppc64  = ppc
+   ARCH/ppc    = ppc
+   ARCH/arm    = arm
++  ARCH/ilp32  = zero
+   ARCH/zero   = zero
+ 
+   # BUILDARCH is usually the same as SRCARCH, except for sparcv9
