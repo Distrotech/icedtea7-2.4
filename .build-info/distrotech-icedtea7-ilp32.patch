@@ -14,22 +14,6 @@ diff -ur a/openjdk/hotspot/src/os/linux/vm/os_linux.cpp b/openjdk/hotspot/src/os
    #endif
  
    // Identify compatability class for VM's architecture and library's architecture
-diff -ur a/openjdk/jdk/make/common/Defs-linux.gmk b/openjdk/jdk/make/common/Defs-linux.gmk
---- a/openjdk/jdk/make/common/Defs-linux.gmk	2013-10-16 16:17:14.000000000 +0200
-+++ b/openjdk/jdk/make/common/Defs-linux.gmk	2013-12-02 11:18:53.758440907 +0200
-@@ -444,8 +444,12 @@
- ifeq ($(ARCH), amd64)
- override OPENWIN_LIB             = $(OPENWIN_HOME)/lib64
- else
-+ifeq ($(ARCH), ilp32)
-+override OPENWIN_LIB             = $(OPENWIN_HOME)/libx32
-+else
- override OPENWIN_LIB             = $(OPENWIN_HOME)/lib
- endif
-+endif
- override OTHER_M4FLAGS           = -D__GLIBC__ -DGNU_ASSEMBLER
- override SUN_CMM_SUBDIR          =
- override THREADS_FLAG            = native
 diff -ur a/openjdk/jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c b/openjdk/jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c
 --- a/openjdk/jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	2013-10-16 16:17:14.000000000 +0200
 +++ b/openjdk/jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	2013-12-02 11:18:53.758440907 +0200
@@ -57,22 +41,3 @@ diff -ur a/openjdk/jdk/src/solaris/native/java/net/PlainSocketImpl.c b/openjdk/j
  
  #include "jvm.h"
  #include "jni_util.h"
---- a/openjdk/hotspot/make/defs.make	2014-03-02 10:24:39.614736893 +0200
-+++ b/openjdk/hotspot/make/defs.make	2014-03-02 10:25:09.464946178 +0200
-@@ -254,7 +254,7 @@
- 
-   # Use uname output for SRCARCH, but deal with platform differences. If ARCH
-   # is not explicitly listed below, it is treated as x86.
--  SRCARCH     = $(ARCH/$(filter sparc sparc64 ia64 amd64 x86_64 arm ppc zero,$(ARCH)))
-+  SRCARCH     = $(ARCH/$(filter sparc sparc64 ia64 amd64 x86_64 arm ppc ilp32 zero,$(ARCH)))
-   ARCH/       = x86
-   ARCH/sparc  = sparc
-   ARCH/sparc64= sparc
-@@ -264,6 +264,7 @@
-   ARCH/ppc64  = ppc
-   ARCH/ppc    = ppc
-   ARCH/arm    = arm
-+  ARCH/ilp32  = zero
-   ARCH/zero   = zero
- 
-   # BUILDARCH is usually the same as SRCARCH, except for sparcv9
