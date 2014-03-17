@@ -14,6 +14,9 @@ CVE-XXXX-YYYY: http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=XXXX-YYYY
 
 New in release 2.4.6 (2014-04-XX):
 
+* Bug fixes
+  - PR1677: Update PaX support to detect running PaX kernel and use newer tools
+
 New in release 2.4.5 (2014-01-29):
 
 * Backports
