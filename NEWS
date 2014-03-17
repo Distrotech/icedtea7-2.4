@@ -14,8 +14,57 @@ CVE-XXXX-YYYY: http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=XXXX-YYYY
 
 New in release 2.4.6 (2014-04-XX):
 
+* Backports
+  - S8009062: poor performance of JNI AttachCurrentThread after fix for 7017193
+  - Re-enable the 'gamma' test at the end of the HotSpot build, but only for HotSpot based bootstrap JDKs.
 * Bug fixes
+  - PR1101: Undefined symbols on GNU/Linux SPARC
+  - PR1659: OpenJDK 7 returns incorrect TrueType font metrics when bold style is set
   - PR1677: Update PaX support to detect running PaX kernel and use newer tools
+  - PR1679: Allow OpenJDK to build on PaX-enabled kernels
+  - RH1015432: java-1.7.0-openjdk: Fails on PPC with StackOverflowError (revised fix)
+  - Link against $(LIBDL) if SYSTEM_CUPS is not true
+* ARM port
+  - Add arm_port from IcedTea 6
+  - Add patches/arm.patch from IcedTea 6
+  - Add patches/arm-debug.patch from IcedTea 6
+  - Add patches/arm-hsdis.patch from IcedTea 6
+  - added jvmti event generation for dynamic_generate and compiled_method_load events to ARM JIT compiler
+  - Adjust saved SP when safepointing.
+  - First cut of invokedynamic
+  - Fix trashed thread ptr after recursive re-entry from asm JIT.
+  - JIT-compilation of ldc methodHandle
+  - Rename a bunch of misleadingly-named functions
+  - Changes for HSX22
+  - Rename a bunch of misleadingly-named functions
+  - Patched method handle adapter code to deal with failures in TCK
+  - Phase 1
+  - Phase 2
+  - RTC Thumb2 JIT enhancements.
+  - Zero fails to build in hsx22+, fix for hsx22 after runs gamma OK, hsx23 still nogo.
+  - Use ldrexd for atomic reads on ARMv7.
+  - Use unified syntax for thumb code.
+  - Corrected call from fast_method_handle_entry to CppInterpreter::method_handle_entry so that thread is loaded into r2
+  - Don't save locals at a return.
+  - Fix call to handle_special_method().  Fix compareAndSwapLong.
+  - Fix JIT bug that miscompiles org.eclipse.ui.internal.contexts.ContextAuthority.sourceChanged
+  - invokedynamic and aldc for JIT
+  - Modified safepoint check to rely on memory protect signal instead of polling
+  - Minor review cleanups.
+  - PR1188: ASM Interpreter and Thumb2 JIT javac miscompile modulo reminder on armel
+  - PR1363: Fedora 19 / rawhide FTBFS SIGILL
+  - Changes for HSX23
+  - Remove fragment from method that has been removed
+  - Remove C++ flags from CC_COMPILE and fix usage in zeroshark.make.
+  - Use $(CC) to compile mkbc instead of $(CC_COMPILE) to avoid C++-only flags
+  - Add note about use of $(CFLAGS)/$(CXXFLAGS)/$(CPPFLAGS) at present.
+  - Override automatic detection of source language for bytecodes_arm.def
+  - Include $(CFLAGS) in assembler stage
+  - PR1626: ARM32 assembler update for hsx24. Use ARM32JIT to turn it on/off.
+  - Replace literal offsets for METHOD_SIZEOFPARAMETERS and ISTATE_NEXT_FRAME with correct symbolic names.
+* Shark
+  - Add Shark definitions from 8003868
+  - Drop compile_method argument removed in 7083786 from sharkCompiler.cpp
 
 New in release 2.4.5 (2014-01-29):
 
