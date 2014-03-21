@@ -20,7 +20,7 @@ New in release 2.4.6 (2014-04-XX):
 * Bug fixes
   - PR1101: Undefined symbols on GNU/Linux SPARC
   - PR1659: OpenJDK 7 returns incorrect TrueType font metrics when bold style is set
-  - PR1677: Update PaX support to detect running PaX kernel and use newer tools
+  - PR1677, G498288: Update PaX support to detect running PaX kernel and use newer tools
   - PR1679: Allow OpenJDK to build on PaX-enabled kernels
   - PR1684: Build fails with empty PAX_COMMAND
   - RH1015432: java-1.7.0-openjdk: Fails on PPC with StackOverflowError (revised fix)
