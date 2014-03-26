@@ -1,3 +1,13 @@
+2014-03-26  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+
+	* Makefile.am:
+	(JDK_CHANGESET): Bring in PR1713.
+	(JDK_SHA256SUM): Likewise.
+	* NEWS:
+	List PR1713 and enablement of ARM32 JIT.
+	Add AArch64 section and rename 'ARM port' section
+	as 'ARM32 port'.
+
 2014-03-21  Andrew John Hughes  <gnu.andrew@member.fsf.org>
 
 	* acinclude.m4:

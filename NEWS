@@ -25,7 +25,7 @@ New in release 2.4.6 (2014-04-XX):
   - PR1684: Build fails with empty PAX_COMMAND
   - RH1015432: java-1.7.0-openjdk: Fails on PPC with StackOverflowError (revised fix)
   - Link against $(LIBDL) if SYSTEM_CUPS is not true
-* ARM port
+* ARM32 port
   - Add arm_port from IcedTea 6
   - Add patches/arm.patch from IcedTea 6
   - Add patches/arm-debug.patch from IcedTea 6
@@ -63,6 +63,9 @@ New in release 2.4.6 (2014-04-XX):
   - Include $(CFLAGS) in assembler stage
   - PR1626: ARM32 assembler update for hsx24. Use ARM32JIT to turn it on/off.
   - Replace literal offsets for METHOD_SIZEOFPARAMETERS and ISTATE_NEXT_FRAME with correct symbolic names.
+  - Turn ARM32 JIT on by default
+* AArch64 port
+  - PR1713: Support AArch64 Port
 * Shark
   - Add Shark definitions from 8003868
   - Drop compile_method argument removed in 7083786 from sharkCompiler.cpp
