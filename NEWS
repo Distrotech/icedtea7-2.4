@@ -12,7 +12,7 @@ JEPX - http://openjdk.java.net/jeps/X
 
 CVE-XXXX-YYYY: http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=XXXX-YYYY
 
-New in release 2.4.6 (2014-04-XX):
+New in release 2.4.6 (2014-03-27):
 
 * Backports
   - S8009062: poor performance of JNI AttachCurrentThread after fix for 7017193

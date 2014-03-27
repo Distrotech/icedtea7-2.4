@@ -1,5 +1,10 @@
 2014-03-27  Andrew John Hughes  <gnu.andrew@member.fsf.org>
 
+	* NEWS: Set release date to today.
+	* configure.ac: Set to 2.4.6.
+
+2014-03-27  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+
 	* acinclude.m4:
 	(IT_ENABLE_ARM32JIT): Turn JIT off by default.
 	* NEWS: Remove mention of turning JIT on by default.
