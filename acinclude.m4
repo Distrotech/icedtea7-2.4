@@ -682,6 +682,8 @@ AC_DEFUN_ONCE([IT_ENABLE_ZERO_BUILD],
       use_zero=yes;
     else
       case "${host}" in
+        aarch64-*-*) ;;
+        arm64-*-*) ;;
         i?86-*-*) ;;
         sparc*-*-*) ;;
         x86_64-*-*) ;;
@@ -950,7 +952,11 @@ AC_DEFUN([IT_WITH_GCJ],
 AC_DEFUN_ONCE([IT_WITH_HOTSPOT_BUILD],
 [
   AC_REQUIRE([IT_ENABLE_ZERO_BUILD])
-  DEFAULT_BUILD="default"
+  if test "x$JRE_ARCH_DIR" = "xaarch64"; then
+    DEFAULT_BUILD="aarch64"
+  else
+    DEFAULT_BUILD="default"
+  fi
   AC_MSG_CHECKING([which HotSpot build to use])
   AC_ARG_WITH([hotspot-build],
 	      [AS_HELP_STRING(--with-hotspot-build=BUILD,the HotSpot build to use [[BUILD=default]])],

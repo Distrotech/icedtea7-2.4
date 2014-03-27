@@ -1,5 +1,11 @@
 2014-03-27  Andrew John Hughes  <gnu.andrew@member.fsf.org>
 
+	* acinclude.m4:
+	(IT_ENABLE_ZERO_BUILD): Default to off on aarch64/arm64.
+	(IT_WITH_HOTSPOT_BUILD): Default to aarch64 port on aarch64.
+
+2014-03-27  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+
 	* patches/boot/hotspot/default/jdk-dependency.patch:
 	Moved to...
 	* patches/boot/hotspot/zero/jdk-dependency.patch:
