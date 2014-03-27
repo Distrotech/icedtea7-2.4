@@ -63,7 +63,6 @@ New in release 2.4.6 (2014-04-XX):
   - Include $(CFLAGS) in assembler stage
   - PR1626: ARM32 assembler update for hsx24. Use ARM32JIT to turn it on/off.
   - Replace literal offsets for METHOD_SIZEOFPARAMETERS and ISTATE_NEXT_FRAME with correct symbolic names.
-  - Turn ARM32 JIT on by default
 * AArch64 port
   - PR1713: Support AArch64 Port
 * Shark
