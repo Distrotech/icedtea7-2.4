@@ -1,3 +1,8 @@
+2014-03-27  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+
+	* NEWS: Updated.
+	* hotspot.map: Bring in S8035893 backport.
+
 2014-03-26  Andrew John Hughes  <gnu.andrew@member.fsf.org>
 
 	Perform configure checks using ecj.jar

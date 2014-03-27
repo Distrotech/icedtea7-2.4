@@ -16,6 +16,7 @@ New in release 2.4.6 (2014-03-27):
 
 * Backports
   - S8009062: poor performance of JNI AttachCurrentThread after fix for 7017193
+  - S8035893: JVM_GetVersionInfo fails to zero structure
   - Re-enable the 'gamma' test at the end of the HotSpot build, but only for HotSpot based bootstrap JDKs.
 * Bug fixes
   - PR1101: Undefined symbols on GNU/Linux SPARC
