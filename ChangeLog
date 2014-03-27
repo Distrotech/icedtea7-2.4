@@ -1,3 +1,27 @@
+2014-03-27  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+
+	* patches/boot/hotspot/default/jdk-dependency.patch:
+	Moved to...
+	* patches/boot/hotspot/zero/jdk-dependency.patch:
+	Removed; no longer a zero HotSpot build.
+	* Makefile.am:
+	(ICEDTEA_BOOT_PATCHES): Make jdk-dependency not
+	dependent on HotSpot version.
+	* patches/boot/hotspot-jdk-dependency.patch:
+	...here.
+
+2014-03-07  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+
+	* patches/systemtap_gc.patch: Moved to...
+	* Makefile.am:
+	(ICEDTEA_PATCHES): Make systemtap_gc.patch
+	HotSpot-dependent.
+	* hotspot.map: Add aarch64 HotSpot.
+	* patches/hotspot/aarch64/systemtap_gc.patch:
+	New patch against AArch64 HotSpot tarball.
+	* patches/hotspot/default/systemtap_gc.patch:
+	... here.
+
 2014-03-26  Andrew John Hughes  <gnu.andrew@member.fsf.org>
 
 	* Makefile.am:
