@@ -1,3 +1,3 @@
 # version url changeset sha256sum
 default http://icedtea.classpath.org/hg/release/icedtea7-forest-2.4/hotspot 00478c5bf5e9 9f77cd372778c8a3359f3c9c0eb37c1dbd7c1f569613da89de64b41de48a5760
-aarch64 http://hg.openjdk.java.net/aarch64-port/jdk7u/hotspot 22910135cca6 477cd13f7fbe34d6dd878bbdb1e16f73b4b22e0e78d049d98f3c9cce8c193a1a
+aarch64 http://hg.openjdk.java.net/aarch64-port/jdk7u/hotspot f50993b6c38d 64c2d0bfa71d6eecf18ab28fd64d5bd79af096f77548d80de7953c306fd9c22c
