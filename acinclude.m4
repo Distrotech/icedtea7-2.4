@@ -2640,7 +2640,7 @@ AC_DEFUN([IT_ENABLE_ARM32JIT],
 [
   AC_MSG_CHECKING([whether to enable the ARM32 JIT])
   AC_ARG_ENABLE([arm32-jit],
-                [AS_HELP_STRING(--enable-arm32-jit,build with the ARM32 JIT [[default=no]])],
+                [AS_HELP_STRING(--enable-arm32-jit,build with the ARM32 JIT [[default=yes]])],
   [
     case "${enableval}" in
       yes)
@@ -2652,7 +2652,7 @@ AC_DEFUN([IT_ENABLE_ARM32JIT],
     esac
   ],
   [
-    enable_arm32jit=no
+    enable_arm32jit=yes
   ])
   AC_MSG_RESULT([$enable_arm32jit])
   AM_CONDITIONAL([ENABLE_ARM32JIT], test x"${enable_arm32jit}" = "xyes")
