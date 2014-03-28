@@ -14,6 +14,9 @@ CVE-XXXX-YYYY: http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=XXXX-YYYY
 
 New in release 2.4.7 (2014-04-XX):
 
+* Bug fixes
+  - PR1726: configure fails looking for ecj.jar before even trying to find javac
+
 New in release 2.4.6 (2014-03-28):
 
 * Backports
