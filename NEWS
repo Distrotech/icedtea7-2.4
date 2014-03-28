@@ -26,6 +26,7 @@ New in release 2.4.6 (2014-03-28):
   - PR1684: Build fails with empty PAX_COMMAND
   - RH1015432: java-1.7.0-openjdk: Fails on PPC with StackOverflowError (revised fix)
   - Link against $(LIBDL) if SYSTEM_CUPS is not true
+  - Perform configure checks using ecj.jar when --with-gcj (native ecj build) is enabled.
 * ARM32 port
   - Add arm_port from IcedTea 6
   - Add patches/arm.patch from IcedTea 6
