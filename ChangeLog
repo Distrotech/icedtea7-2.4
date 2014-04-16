@@ -1,4 +1,9 @@
-2014-03-28  Andrew John Hughes  <gnu.andrew@redhat.com>
+2014-03-27  Andrew John Hughes  <gnu_andrew@member.fsf.org>
+
+	* NEWS: Set release date to today.
+	* configure.ac: Set to 2.4.7.
+
+2014-03-28  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* Makefile.am:
 	(CORBA_CHANGESET): Update to icedtea-2.4.7 tag.
@@ -41,15 +46,15 @@
 	* configure.ac: Bump to 2.4.7pre00.
 	* NEWS: Add 2.4.7 section.
 
-2014-03-26  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-03-26  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* NEWS: Update with recent changes.
 
-2014-03-28  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-03-28  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* NEWS: Update release date.
 
-2014-03-28  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-03-28  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* acinclude.m4:
 	(IT_ENABLE_ARM32JIT): Turn JIT on by default.
@@ -63,12 +68,12 @@
 	* patches/hotspot/aarch64/werror.patch:
 	Allow COMPILER_WARNINGS_FATAL to turn off -Werror.
 
-2014-03-27  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-03-27  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* NEWS: Updated.
 	* hotspot.map: Bring in S8035893 backport.
 
-2014-03-26  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-03-26  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	Perform configure checks using ecj.jar
 	if native ecj is enabled.
@@ -84,36 +89,36 @@
 	(IT_DIAMOND_CHECK): Depend on IT_CHECK_JAVA_AND_JAVAC_WORK.
 	* configure.ac: Remove invocation of IT_WITH_GCJ.
 
-2014-03-27  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-03-27  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* hotspot.map:
 	Update to latest aarch64 tree.
 
-2014-03-27  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-03-27  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* Makefile.am:
 	(EXTRA_DIST): Don't look for patches in
 	boot/hotspot/*. Do look for patches in
 	hotspot/*.
 
-2014-03-27  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-03-27  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* NEWS: Set release date to today.
 	* configure.ac: Set to 2.4.6.
 
-2014-03-27  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-03-27  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* acinclude.m4:
 	(IT_ENABLE_ARM32JIT): Turn JIT off by default.
 	* NEWS: Remove mention of turning JIT on by default.
 
-2014-03-27  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-03-27  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* acinclude.m4:
 	(IT_ENABLE_ZERO_BUILD): Default to off on aarch64/arm64.
 	(IT_WITH_HOTSPOT_BUILD): Default to aarch64 port on aarch64.
 
-2014-03-27  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-03-27  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* patches/boot/hotspot/default/jdk-dependency.patch:
 	Moved to...
@@ -125,7 +130,7 @@
 	* patches/boot/hotspot-jdk-dependency.patch:
 	...here.
 
-2014-03-07  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-03-07  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* patches/systemtap_gc.patch: Moved to...
 	* Makefile.am:
@@ -137,7 +142,7 @@
 	* patches/hotspot/default/systemtap_gc.patch:
 	... here.
 
-2014-03-26  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-03-26  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* Makefile.am:
 	(JDK_CHANGESET): Bring in PR1713.
@@ -147,24 +152,24 @@
 	Add AArch64 section and rename 'ARM port' section
 	as 'ARM32 port'.
 
-2014-03-21  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-03-21  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* acinclude.m4:
 	(IT_ENABLE_ARM32JIT): Turn JIT on by default.
 
-2014-02-24  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-02-24  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* NEWS: Add Gentoo bug reference for
 	PaX update.
 
-2014-02-24  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-02-24  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	PR1684: Build fails with empty PAX_COMMAND
 	* Makefile.am:
 	(ICEDTEA_ENV): Only add PAX_COMMAND when defined.
 	* NEWS: Updated.
 
-2014-02-21  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-02-21  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* acinclude.m4:
 	(IT_WITH_PAX): Leave PAX_COMMAND with the empty
@@ -172,7 +177,7 @@
 	failures.
 	* pax-mark-vm.in: Update PAX_COMMAND check.
 
-2014-02-19  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-02-19  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* patches/boot/test_gamma.patch,
 	* patches/pax-mark-rmic-java.patch,
@@ -208,7 +213,7 @@
 	* configure.ac: Run IT_ENABLE_ARM32JIT macro.
 	* hotspot.map: Update to icedtea-2.4.6pre01 tag.
 
-2014-02-19  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2014-02-19  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	PR1677: Update PaX support to detect running PaX
 	kernel and use newer tools
@@ -390,7 +395,7 @@
 
 	* NEWS: List PR1410, G478484 and G477456.
 
-2013-05-28  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-05-28  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	PR1410: Icedtea 2.3.9 fails to build using icedtea 1.12.4
 	* Makefile.am:
@@ -402,7 +407,7 @@
 	(clean-rt): Mirror creation of STAGE1_BOOT_RUNTIME in
 	bootstrap-directory-stage1.
 
-2013-01-15  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-01-15  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* Makefile.am:
 	(ICEDTEA_PATCHES): Add patch when building
@@ -451,7 +456,7 @@
 	(JAMVM_VERSION): Updated JamVM to 2013-07-14 revision.
 	(JAMVM_SHA256SUM): Updated.
 
-2013-09-11  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-09-11  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* acinclude.m4:
 	(IT_CHECK_FOR_LCMS): Make error message mention
@@ -501,25 +506,25 @@
 	the krb5.h header.
 	* configure.ac: Invoke IT_CHECK_FOR_KERBEROS.
 
-2013-07-24  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-07-24  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* NEWS: Mention LCMS 2 change.
 
-2013-07-24  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-07-24  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* acinclude.m4:
 	(IT_CHECK_FOR_LCMS): Turn system LCMS back on by
 	default if the version is 2.5 or above with the
 	latest security fixes.
 
-2013-09-05  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-09-05  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* NEWS:
 	Add new OpenJDK changes, remove duplicates
 	listed in 2.4.0 which were in earlier
 	security releases.
 
-2013-09-04  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-09-04  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* Makefile.am,
 	(OPENJDK_VERSION): Bump to b60.
@@ -538,7 +543,7 @@
 	* hotspot.map: Update to IcedTea 2.4 branch HotSpot
 	HEAD.
 
-2013-07-30  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-07-30  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* Makefile.am:
 	(OPENJDK_VERSION): Bump to b34.
@@ -566,16 +571,16 @@
 	Add new case in
 	com.sun.org.apache.xml.internal.serializer.Encodings.
 
-2013-07-08  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-07-08  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* configure.ac: Bump to 2.4.2pre.
 	* NEWS: Add 2.4.2 section.
 
-2013-07-05  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-07-05  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* configure.ac: Set version to 2.4.1.
 
-2013-06-28  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-28  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* acinclude.m4:
 	(IT_WITH_HOTSPOT_BUILD): Define once.
@@ -585,17 +590,17 @@
 	* configure.ac: Drop IT_ENABLE_ZERO_BUILD; called
 	by IT_WITH_HOTSPOT_BUILD.
 
-2013-06-25  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-25  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* NEWS: Add Red Hat bugzilla references.
 
-2013-07-05  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-07-05  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* NEWS: Add latest security fixes and other
 	changes brought in when syncing with 7u40 b31.
 	Set release date.
 
-2013-07-01  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-07-01  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* Makefile.am:
 	(OPENJDK_VERSION): Bump to b31.
@@ -625,17 +630,17 @@
 	* patches/systemtap_gc.patch:
 	Regenerated.
 
-2013-06-11  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-11  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* configure.ac: Bump to 2.4.1pre.
 	* NEWS: Add 2.4.1 section.
 
-2013-06-10  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-10  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* NEWS: Update following release
 	annoucement.
 
-2013-04-21  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-04-21  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* Makefile.am:
 	(ICEDTEA_NAME): Make same across all versions.
@@ -660,28 +665,28 @@
 	* hotspot.map: Update default to head of IcedTea7 2.4
 	forest HotSpot.
 
-2013-06-09  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-09  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* Makefile.am:
 	(EXTRA_DIST): Remove non-existent JamVM patch
 	directory.
 
-2013-06-09  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-09  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* Makefile.am:
 	(GENERATED_FILES): Remove non-existent jconsole
 	directory.
 
-2013-06-09  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-09  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* NEWS: Add Debian bug ID for PR1435.
 
-2013-06-07  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-07  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* configure.ac: Set to 2.4.0.
 	* NEWS: Set release date.
 
-2013-06-07  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-07  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	PR1276: Synchronise CACAO rules between IcedTea6/7/8
 	where possible
@@ -714,7 +719,7 @@
 	* acinclude: New macro AC_CHECK_WITH_CACAO_SRC_DIR.
 	* Makefile.am: Copy Cacao sources when USE_ALT_CACAO_SRC_DIR is used.
 
-2013-06-06  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-06  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	S7191872: Xrender: No text displayed using
 	64 bit JDK on solaris11-sparc
@@ -742,16 +747,16 @@
 	PR1435 and PR728.
 	* hotspot.map: Update to IcedTea7 forest head.
 
-2013-06-06  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-06  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* ChangeLog: Update my Red Hat e-mail address.
 
-2013-06-06  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-06  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* AUTHORS: Include entries from THANKYOU.
 	* THANKYOU: Removed.
 
-2013-06-06  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-06  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* INSTALL:
 	Synchronise list of VMs with macro in acinclude.m4.
@@ -767,7 +772,7 @@
 	* INSTALL: Add /etc/alternatives/java_sdk_openjdk.
 	* acinclude.m4: Likewise.
 
-2013-06-06  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-06  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* AUTHORS: Updated with Michal.
 
@@ -778,13 +783,13 @@
 	Remove check on ENABLE_XRENDER variable
 	which is no longer set.
 
-2013-06-06  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-06  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* Makefile.am:
 	(.PHONY): Add clean-cryptocheck.
 	(clean-local): Likewise.
 
-2013-06-05  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-05  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* Makefile.am:
 	(check-crypto): Depend on icedtea.stamp.
@@ -793,7 +798,7 @@
 	(check-crypto-debug): Depend on icedtea-debug.stamp.
 	(clean-crypto-boot): Depend on icedtea-boot.stamp.
 
-2013-06-05  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-05  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	PR1280: Updating/Installing OpenJDK should recreate the
 	shared class-data archive
@@ -844,7 +849,7 @@
 	(clean-icedtea-stage1): Depend on clean-add-archive-boot.
 	* NEWS: Mention.
 
-2013-06-05  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-06-05  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	PR1170: Ensure unlimited crypto policy is in place.
 	* Makefile.am:
@@ -877,26 +882,26 @@
 	Checks whether the unlimited crypto policy is in
 	place or not.
 
-2013-05-23  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-05-23  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* NEWS: Update with fixes brought in by latest
 	forest updates.
 
-2013-05-22  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-05-22  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* NEWS: Remove CACAO changes which only appear
 	on the loop branch.
 
-2013-05-22  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-05-22  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* NEWS: Add latest release notes.
 
-2013-05-16  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-05-16  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* javac.in: Fix accidental inclusion of
 	hardcoded path.
 
-2013-05-15  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-05-15  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	PR716: IcedTea7 should bootstrap with IcedTea6
 	* NEWS: Updated.
@@ -960,12 +965,12 @@
 	(JAMVM_SHA256SUM): Updated.
 	(ICEDTEA_PATCHES): Drop unneeded sun.misc.Perf patch. 
 
-2013-04-17  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-04-17  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* patches/boot/ecj-diamond.patch:
 	Regenerate due to security patches.
 
-2013-04-24  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-04-24  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	PR1278: Synchronise CACAO versions between IcedTea6/7/8
 	where possible
@@ -977,7 +982,7 @@
 	(ICEDTEA_PATCHES): Drop unneeded jsig patch.
 	* NEWS: Updated.
 
-2013-04-24  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-04-24  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* Makefile.am,
 	(OPENJDK_VERSION): Bump to b20.
@@ -997,7 +1002,7 @@
 	* hotspot.map: Update to IcedTea7 forest head.
 	* patches/systemtap_gc.patch: Regenerated.
 
-2013-04-18  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-04-18  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	PR1404: Failure to bootstrap with ecj 4.2
 	* Makefile.am:
@@ -1070,7 +1075,7 @@
 	* NEWS: Add release notes for 2.3.8, 2.1.7 &
 	2.2.7.
 
-2013-03-11  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-03-11  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	PR1340: Simplify the rewriter, avoiding concurrency.
 	* rewriter/com/redhat/rewriter/ClassRewriter.java:
@@ -1081,7 +1086,7 @@
 	* NEWS: Add release notes for 2.3.7, 2.1.6 &
 	2.2.6.
 
-2013-02-05  Andrew John Hughes  <gnu.andrew@member.fsf.org>
+2013-02-05  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
 	* Makefile.am:
 	(extract-jamvm): Depend on download-jamvm.
