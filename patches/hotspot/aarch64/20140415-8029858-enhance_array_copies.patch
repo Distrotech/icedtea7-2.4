@@ -1,0 +1,22 @@
+# HG changeset patch
+# User dsimms
+# Date 1389348912 -3600
+#      Fri Jan 10 11:15:12 2014 +0100
+# Node ID b478fbd631095afe8c37e3582c467d3ef64c7ba5
+# Parent  212a8089da498a233d4279e4b50235c271090f71
+8029858: Enhance array copies
+Summary: Just read the source element once
+Reviewed-by: coleenp, ahgross
+
+diff --git a/src/share/vm/oops/objArrayKlass.cpp b/src/share/vm/oops/objArrayKlass.cpp
+--- openjdk/hotspot/src/share/vm/oops/objArrayKlass.cpp
++++ openjdk/hotspot/src/share/vm/oops/objArrayKlass.cpp
+@@ -269,7 +269,7 @@
+         if (element_is_null ||
+             (new_val->klass())->is_subtype_of(bound)) {
+           bs->write_ref_field_pre(p, new_val);
+-          *p = *from;
++          *p = element;
+         } else {
+           // We must do a barrier to cover the partial copy.
+           const size_t pd = pointer_delta(p, dst, (size_t)heapOopSize);

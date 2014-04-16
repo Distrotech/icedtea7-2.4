@@ -1,0 +1,32 @@
+# HG changeset patch
+# User hseigel
+# Date 1392921059 18000
+#      Thu Feb 20 13:30:59 2014 -0500
+# Node ID 9b289963cb9a14636fbe8faaa2dd6d3678464a7b
+# Parent  c96a3381e55ebacff49901b98c2ee87e17cb0632
+8034926: Attribute classes properly
+Summary: Add check to prevent underflow
+Reviewed-by: coleenp, ahgross
+
+diff --git a/src/share/vm/classfile/classFileParser.cpp b/src/share/vm/classfile/classFileParser.cpp
+--- openjdk/hotspot/src/share/vm/classfile/classFileParser.cpp
++++ openjdk/hotspot/src/share/vm/classfile/classFileParser.cpp
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2014, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -2777,6 +2777,11 @@
+                      "Short length on BootstrapMethods in class file %s",
+                      CHECK);
+ 
++  guarantee_property(attribute_byte_length > sizeof(u2),
++                     "Invalid BootstrapMethods attribute length %u in class file %s",
++                     attribute_byte_length,
++                     CHECK);
++
+   // The attribute contains a counted array of counted tuples of shorts,
+   // represending bootstrap specifiers:
+   //    length*{bootstrap_method_index, argument_count*{argument_index}}
