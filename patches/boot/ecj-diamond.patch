@@ -7131,3 +7131,15 @@ diff -Nru openjdk-boot.orig/jdk/test/java/util/Random/DistinctSeeds.java openjdk
          List<Thread> threads = new ArrayList<Thread>();
          for (int i = 0; i < threadCount; i++) {
              RandomCollector r = new RandomCollector();
+diff -Nru openjdk-boot.orig/jdk/src/share/classes/java/util/logging/LogManager.java openjdk-boot/jdk/src/share/classes/java/util/logging/LogManager.java
+--- openjdk-boot.orig/jdk/src/share/classes/java/util/logging/LogManager.java	2014-04-17 15:39:21.173802195 +0100
++++ openjdk-boot/jdk/src/share/classes/java/util/logging/LogManager.java	2014-04-17 15:39:34.838004489 +0100
+@@ -381,7 +381,7 @@
+                 final Object ecx = javaAwtAccess.getAppletContext();
+                 if (ecx != null) {
+                     if (contextsMap == null) {
+-                        contextsMap = new WeakHashMap<>();
++                        contextsMap = new WeakHashMap<Object, LoggerContext>();
+                     }
+                     context = contextsMap.get(ecx);
+                     if (context == null) {

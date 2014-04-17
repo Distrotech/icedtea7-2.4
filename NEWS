@@ -14,6 +14,35 @@ CVE-XXXX-YYYY: http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=XXXX-YYYY
 
 New in release 2.4.8 (2014-07-XX):
 
+* Backports
+  - S5049299: (process) Use posix_spawn, not fork, on S10 to avoid swap exhaustion
+  - S6571600: JNI use results in UnsatisfiedLinkError looking for libmawt.so
+  - S7131153: GetDC called way too many times - causes bad performance.
+  - S7190349: [macosx] Text (Label) is incorrectly drawn with a rotated g2d
+  - S8008118: (process) Possible null pointer dereference in jdk/src/solaris/native/java/lang/UNIXProcess_md.c
+  - S8014460: Need to check for non-empty EXT_LIBS_PATH before using it
+  - S8019853: Break logging and AWT circular dependency
+  - S8020191: System.getProperty("os.name") returns "Windows NT (unknown)" on Windows 8.1
+  - S8022452: Hotspot needs to know about Windows 8.1 and Windows Server 2012 R2
+  - S8024830: SEGV in org.apache.lucene.codecs.compressing.CompressingTermVectorsReader.get
+  - S8025588: [macosx] Frozen AppKit thread in 7u40
+  - S8026404: Logging in Applet can trigger ACE: access denied ("java.lang.RuntimePermission" "modifyThreadGroup")
+  - S8026705: [TEST_BUG] java/beans/Introspector/TestTypeResolver.java failed
+  - S8027196: Increment minor version of HSx for 7u55 and initialize the build number
+  - S8030655: Regression: 14_01 Security fix 8024306 causes test failures
+  - S8030813: Signed applet fails to load when CRLs are stored in an LDAP directory
+  - S8030822: (tz) Support tzdata2013i
+  - S8031050: (thread) Change Thread initialization so that thread name is set before invoking SecurityManager
+  - S8031462: Fonts with morx tables are broken with latest ICU fixes
+  - S8032740: Need to create SE Embedded Source Bundles in 7 Release
+  - S8034772: JDK-8028795 brought a specification change to 7u55 release and caused JCK7 signature test failure
+  - S8035283: Second phase of branch shortening doesn't account for loop alignment
+  - S8035618: Four api/org_omg/CORBA TCK tests fail under plugin only
+  - S8036147: Increment hsx 24.55 build to b02 for 7u55-b11
+  - S8036837: Increment hsx 24.55 build to b03 for 7u55-b12
+* Bug fixes
+  - Fix accidental reversion of PR1188 for armel
+
 New in release 2.4.7 (2014-04-15):
 
 * Security fixes
