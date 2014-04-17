@@ -1,5 +1,9 @@
 2014-04-17  Andrew John Hughes  <gnu_andrew@member.fsf.org>
 
+	* configure.ac: Bump to 2.4.8pre01.
+
+2014-04-17  Andrew John Hughes  <gnu_andrew@member.fsf.org>
+
 	* Makefile.am:
 	(CORBA_CHANGESET): Update to icedtea-2.4.8pre01 tag.
 	(JAXP_CHANGESET): Likewise.
