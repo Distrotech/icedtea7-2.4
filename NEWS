@@ -14,34 +14,87 @@ CVE-XXXX-YYYY: http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=XXXX-YYYY
 
 New in release 2.4.8 (2014-07-XX):
 
+* Security fixes
+  - S8029755, CVE-2014-4209: Enhance subject class
+  - S8030763: Validate global memory allocation
+  - S8031340, CVE-2014-4264: Better TLS/EC management
+  - S8031346, CVE-2014-4244: Enhance RSA key handling
+  - S8031540: Introduce document horizon
+  - S8032536: JVM resolves wrong method in some unusual cases
+  - S8033055: Issues in 2d
+  - S8033301, CVE-2014-4266: Build more informative InfoBuilder
+  - S8034267: Probabilistic native crash
+  - S8034272: Do not cram data into CRAM arrays
+  - S8034985, CVE-2014-2483: Better form for Lambda Forms
+  - S8035004, CVE-2014-4252: Provider provides less service
+  - S8035009, CVE-2014-4218: Make Proxy representations consistent
+  - S8035119, CVE-2014-4219: Fix exceptions to bytecode verification
+  - S8035699, CVE-2014-4268: File choosers should be choosier
+  - S8035788. CVE-2014-4221: Provide more consistency for lookups
+  - S8035793, CVE-2014-4223: Maximum arity maxed out
+  - S8036571: (process) Process process arguments carefully
+  - S8036800: Attribute OOM to correct part of code
+  - S8037046: Validate libraries to be loaded
+  - S8037076, CVE-2014-2490: Check constant pool constants
+  - S8037157: Verify <init> call
+  - S8037162, CVE-2014-4263: More robust DH exchanges
+  - S8037167, CVE-2014-4216: Better method signature resolution
+  - S8039520, CVE-2014-4262: More atomicity of atomic updates
 * Backports
   - S5049299: (process) Use posix_spawn, not fork, on S10 to avoid swap exhaustion
   - S6571600: JNI use results in UnsatisfiedLinkError looking for libmawt.so
   - S7131153: GetDC called way too many times - causes bad performance.
   - S7190349: [macosx] Text (Label) is incorrectly drawn with a rotated g2d
+  - S8001108: an attempt to use "<init>" as a method name should elicit NoSuchMethodException
+  - S8001109: arity mismatch on a call to spreader method handle should elicit IllegalArgumentException
   - S8008118: (process) Possible null pointer dereference in jdk/src/solaris/native/java/lang/UNIXProcess_md.c
+  - S8013611: Modal dialog fails to obtain keyboard focus
+  - S8013809: deadlock in SSLSocketImpl between between write and close
+  - S8013836: getFirstDayOfWeek reports wrong day for pt-BR locale
   - S8014460: Need to check for non-empty EXT_LIBS_PATH before using it
   - S8019853: Break logging and AWT circular dependency
+  - S8019990: IM candidate window appears on the South-East corner of the display.
   - S8020191: System.getProperty("os.name") returns "Windows NT (unknown)" on Windows 8.1
   - S8022452: Hotspot needs to know about Windows 8.1 and Windows Server 2012 R2
+  - S8023990: Regression: postscript size increase from 6u18
+  - S8024283: 10 nashorn tests fail with similar stack trace InternalError with cause being NoClassDefFoundError
+  - S8024616: JSR292: lazily initialize core NamedFunctions used for bootstrapping
   - S8024830: SEGV in org.apache.lucene.codecs.compressing.CompressingTermVectorsReader.get
   - S8025588: [macosx] Frozen AppKit thread in 7u40
   - S8026404: Logging in Applet can trigger ACE: access denied ("java.lang.RuntimePermission" "modifyThreadGroup")
   - S8026705: [TEST_BUG] java/beans/Introspector/TestTypeResolver.java failed
   - S8027196: Increment minor version of HSx for 7u55 and initialize the build number
+  - S8027212: java/nio/channels/Selector/SelectAfterRead.java fails intermittently
+  - S8028285: RMI Thread can no longer call out to AWT
+  - S8029177: [Parfait] warnings from b117 for jdk.src.share.native.com.sun.java.util.jar: JNI exception pending
   - S8030655: Regression: 14_01 Security fix 8024306 causes test failures
   - S8030813: Signed applet fails to load when CRLs are stored in an LDAP directory
   - S8030822: (tz) Support tzdata2013i
   - S8031050: (thread) Change Thread initialization so that thread name is set before invoking SecurityManager
+  - S8031075: [Regression] focus disappears with shift+tab on dialog having one focus component
   - S8031462: Fonts with morx tables are broken with latest ICU fixes
+  - S8032585: JSR292: IllegalAccessError when attempting to invoke protected method from different package
   - S8032740: Need to create SE Embedded Source Bundles in 7 Release
+  - S8033278: Missed access checks for Lookup.unreflect* after 8032585
   - S8034772: JDK-8028795 brought a specification change to 7u55 release and caused JCK7 signature test failure
   - S8035283: Second phase of branch shortening doesn't account for loop alignment
+  - S8035613: With active Securitymanager JAXBContext.newInstance fails
   - S8035618: Four api/org_omg/CORBA TCK tests fail under plugin only
   - S8036147: Increment hsx 24.55 build to b02 for 7u55-b11
+  - S8036786: Update jdk7 testlibrary to match jdk8
   - S8036837: Increment hsx 24.55 build to b03 for 7u55-b12
+  - S8037012: (tz) Support tzdata2014a
+  - S8038306: (tz) Support tzdata2014b
+  - S8038392: Generating prelink cache breaks JAVA 'jinfo' utility normal behavior
+  - S8042264: 7u65 l10n resource file translation update 1
+  - S8042582: Test java/awt/KeyboardFocusmanager/ChangeKFMTest/ChangeKFMTest.html fails on Windows x64
+  - S8042590: Running form URL throws NPE
+  - S8042789: org.omg.CORBA.ORBSingletonClass loading no longer uses context class loader
+  - S8043012: (tz) Support tzdata2014c
 * Bug fixes
   - Fix accidental reversion of PR1188 for armel
+  - PR1781: NSS PKCS11 provider fails to handle multipart AES encryption
+  - RH905128: [CRASH] OpenJDK-1.7.0 while using NSS security provider and kerberos
 
 New in release 2.4.7 (2014-04-15):
 
