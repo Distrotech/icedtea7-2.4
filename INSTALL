@@ -30,6 +30,7 @@ giflib-devel
 libpng-devel
 libjpeg-devel >= 6b
 zlib-devel
+lcms2-devel (for --enable-system-lcms)
 rhino (can be disabled using --without-rhino)
 libffi (for --enable-zero or on archs other than x86/x86_64/sparc)
 pulseaudio-libs-devel >= 0.9.11 (for --enable-pulse-java)

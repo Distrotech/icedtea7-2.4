@@ -94,6 +94,7 @@ New in release 2.4.8 (2014-07-XX):
 * Bug fixes
   - Fix accidental reversion of PR1188 for armel
   - PR1781: NSS PKCS11 provider fails to handle multipart AES encryption
+  - PR1830: Drop version requirement for LCMS 2
   - PR1833, RH1022017: Report elliptic curves supported by NSS, not the SunEC library
   - RH905128: [CRASH] OpenJDK-1.7.0 while using NSS security provider and kerberos
 
