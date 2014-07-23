@@ -1,0 +1,48 @@
+# HG changeset patch
+# User hseigel
+# Date 1401278966 14400
+#      Wed May 28 08:09:26 2014 -0400
+# Node ID e6b7384074325d5a4ede728d6928ecb7f1cc1326
+# Parent  eb984acb23fe8243620a2c1e8a935ad936221dba
+8043454: Test case for 8037157 should not throw a VerifyError
+Summary: Don't throw VerifyError if method is NULL.
+Reviewed-by: acorn, lfoltan, mschoene
+
+diff -r eb984acb23fe -r e6b738407432 src/share/vm/classfile/verifier.cpp
+--- openjdk/hotspot/src/share/vm/classfile/verifier.cpp	Mon Jun 02 08:21:50 2014 -0700
++++ openjdk/hotspot/src/share/vm/classfile/verifier.cpp	Wed May 28 08:09:26 2014 -0400
+@@ -2307,21 +2307,19 @@
+       Method* m = InstanceKlass::cast(ref_klass)->uncached_lookup_method(
+         vmSymbols::object_initializer_name(),
+         cp->signature_ref_at(bcs->get_index_u2()));
+-      if (m == NULL) {
+-        verify_error(ErrorContext::bad_code(bci),
+-            "Call to missing <init> method");
+-        return;
+-      }
+-      instanceKlassHandle mh(THREAD, m->method_holder());
+-      if (m->is_protected() && !mh->is_same_class_package(_klass())) {
+-        bool assignable = current_type().is_assignable_from(
+-          objectref_type, this, CHECK_VERIFY(this));
+-        if (!assignable) {
+-          verify_error(ErrorContext::bad_type(bci,
+-              TypeOrigin::cp(new_class_index, objectref_type),
+-              TypeOrigin::implicit(current_type())),
+-              "Bad access to protected <init> method");
+-          return;
++      // Do nothing if method is not found.  Let resolution detect the error.
++      if (m != NULL) {
++        instanceKlassHandle mh(THREAD, m->method_holder());
++        if (m->is_protected() && !mh->is_same_class_package(_klass())) {
++          bool assignable = current_type().is_assignable_from(
++            objectref_type, this, CHECK_VERIFY(this));
++          if (!assignable) {
++            verify_error(ErrorContext::bad_type(bci,
++                TypeOrigin::cp(new_class_index, objectref_type),
++                TypeOrigin::implicit(current_type())),
++                "Bad access to protected <init> method");
++            return;
++          }
+         }
+       }
+     }

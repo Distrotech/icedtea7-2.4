@@ -1,0 +1,67 @@
+# HG changeset patch
+# User acorn
+# Date 1395340600 25200
+#      Thu Mar 20 11:36:40 2014 -0700
+# Node ID f0d759a6a2309a1c149d530b29db24eda885f267
+# Parent  2b2cc89121dbc0013dbbf338330ccb1c59dc8f13
+8037167: Better method signature resolution
+Reviewed-by: mschoene, hseigel, lfoltan
+
+diff -r 2b2cc89121db -r f0d759a6a230 src/share/vm/classfile/classFileParser.cpp
+--- openjdk/hotspot/src/share/vm/classfile/classFileParser.cpp	Thu Mar 20 10:06:22 2014 -0700
++++ openjdk/hotspot/src/share/vm/classfile/classFileParser.cpp	Thu Mar 20 11:36:40 2014 -0700
+@@ -931,7 +931,7 @@
+             "Wrong size %u for field's Signature attribute in class file %s",
+             attribute_length, CHECK);
+         }
+-        generic_signature_index = cfs->get_u2(CHECK);
++        generic_signature_index = parse_generic_signature_attribute(CHECK);
+       } else if (attribute_name == vmSymbols::tag_runtime_visible_annotations()) {
+         runtime_visible_annotations_length = attribute_length;
+         runtime_visible_annotations = cfs->get_u1_buffer();
+@@ -2305,8 +2305,7 @@
+             "Invalid Signature attribute length %u in class file %s",
+             method_attribute_length, CHECK_(nullHandle));
+         }
+-        cfs->guarantee_more(2, CHECK_(nullHandle));  // generic_signature_index
+-        generic_signature_index = cfs->get_u2_fast();
++        generic_signature_index = parse_generic_signature_attribute(CHECK_(nullHandle));
+       } else if (method_attribute_name == vmSymbols::tag_runtime_visible_annotations()) {
+         runtime_visible_annotations_length = method_attribute_length;
+         runtime_visible_annotations = cfs->get_u1_buffer();
+@@ -2616,6 +2615,17 @@
+   return method_ordering;
+ }
+ 
++// Parse generic_signature attribute for methods and fields
++u2 ClassFileParser::parse_generic_signature_attribute(TRAPS) {
++  ClassFileStream* cfs = stream();
++  cfs->guarantee_more(2, CHECK_0);  // generic_signature_index
++  u2 generic_signature_index = cfs->get_u2_fast();
++  check_property(
++    valid_symbol_at(generic_signature_index),
++    "Invalid Signature attribute at constant pool index %u in class file %s",
++    generic_signature_index, CHECK_0);
++  return generic_signature_index;
++}
+ 
+ void ClassFileParser::parse_classfile_sourcefile_attribute(TRAPS) {
+   ClassFileStream* cfs = stream();
+diff -r 2b2cc89121db -r f0d759a6a230 src/share/vm/classfile/classFileParser.hpp
+--- openjdk/hotspot/src/share/vm/classfile/classFileParser.hpp	Thu Mar 20 10:06:22 2014 -0700
++++ openjdk/hotspot/src/share/vm/classfile/classFileParser.hpp	Thu Mar 20 11:36:40 2014 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2014, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -266,6 +266,7 @@
+   u1* parse_stackmap_table(u4 code_attribute_length, TRAPS);
+ 
+   // Classfile attribute parsing
++  u2 parse_generic_signature_attribute(TRAPS);
+   void parse_classfile_sourcefile_attribute(TRAPS);
+   void parse_classfile_source_debug_extension_attribute(int length, TRAPS);
+   u2   parse_classfile_inner_classes_attribute(u1* inner_classes_attribute_start,

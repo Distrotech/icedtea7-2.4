@@ -1,0 +1,37 @@
+# HG changeset patch
+# User coleenp
+# Date 1395254743 14400
+#      Wed Mar 19 14:45:43 2014 -0400
+# Node ID 0297e36d24a18dc9e7bc79740c2d7509ad1b6110
+# Parent  5f7e12f5b4e5a40417a3579c01e233511058a76c
+8037076: Check constant pool constants
+Summary: Fix events log string.
+Reviewed-by: kvn, mschoene
+
+diff -r 5f7e12f5b4e5 -r 0297e36d24a1 src/share/vm/utilities/events.cpp
+--- openjdk/hotspot/src/share/vm/utilities/events.cpp	Wed Mar 19 14:02:51 2014 -0400
++++ openjdk/hotspot/src/share/vm/utilities/events.cpp	Wed Mar 19 14:45:43 2014 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2012, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2014, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -82,7 +82,7 @@
+     va_start(ap, format);
+     // Save a copy of begin message and log it.
+     _buffer.printv(format, ap);
+-    Events::log(NULL, _buffer);
++    Events::log(NULL, "%s", (const char*)_buffer);
+     va_end(ap);
+   }
+ }
+@@ -91,6 +91,6 @@
+   if (LogEvents) {
+     // Append " done" to the begin message and log it
+     _buffer.append(" done");
+-    Events::log(NULL, _buffer);
++    Events::log(NULL, "%s", (const char*)_buffer);
+   }
+ }

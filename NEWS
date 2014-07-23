@@ -97,6 +97,55 @@ New in release 2.4.8 (2014-07-XX):
   - PR1830: Drop version requirement for LCMS 2
   - PR1833, RH1022017: Report elliptic curves supported by NSS, not the SunEC library
   - RH905128: [CRASH] OpenJDK-1.7.0 while using NSS security provider and kerberos
+* AArch64 port
+  - AArch64 C2 instruct for smull
+  - Add a constructor as a conversion from Register - RegSet.  Use it.
+  - Add RegSet::operator+=.
+  - Add support for a few simple intrinsics
+  - Add support for builtin crc32 instructions
+  - Add support for CRC32 intrinsic
+  - Add support for Neon implementation of CRC32
+  - All address constants are 48 bits in size.
+  - C1: Fix offset overflow when profiling.
+  - Common frame handling for C1/C2 which correctly handle all frame sizes
+  - Correct costs for operations with shifts.
+  - Correct OptoAssembly for prologs and epilogs.
+  - Delete useless instruction.
+  - Don't use any form of _call_VM_leaf when we're calling a stub.
+  - Fast string comparison
+  - Fast String.equals()
+  - Fix a tonne of bogus comments.
+  - Fix biased locking and enable as default
+  - Fix instruction size from 8 to 4
+  - Fix opto assembly for shifts.
+  - Fix register misuse in verify_method_data_pointer
+  - Fix register usage in generate_verify_oop().
+  - Implement various locked memory operations.
+  - Improve C1 performance improvements in ic_cache checks
+  - Improve code generation for pop(), as suggested by Edward Nevill.
+  - Improvements to safepoint polling
+  - Make code entry alignment 64 for C2
+  - Minor optimisation for divide by 2
+  - New cost model for instruction selection.
+  - Offsets in lookupswitch instructions should be signed.
+  - Optimise addressing of card table byte map base
+  - Optimise C2 entry point verification
+  - Optimise long divide by 2
+  - Performance improvement and ease of use changes pulled from upstream
+  - Preserve callee save FP registers around call to java code
+  - Remove obsolete C1 patching code.
+  - Remove special-case handling of division arguments.  AArch64 doesn't need it.
+  - Remove unnecessary memory barriers around CAS operations
+  - Restore sp from sender sp, r13 in crc32 code
+  - Restrict default ReservedCodeCacheSize to 128M
+  - Rewrite CAS operations to be more conservative
+  - Save intermediate state before removing C1 patching code.
+  - Tidy up register usage in push/pop instructions.
+  - Tidy up stack frame handling.
+  - Use 2- and 3-instruction immediate form of movoop and mov_metadata in C2-generated code.
+  - Use an explicit set of registers rather than a bitmap for psh and pop operations.
+  - Use explicit barrier instructions in C1.
+  - Use gcc __clear_cache instead of doing it ourselves
 
 New in release 2.4.7 (2014-04-15):
 

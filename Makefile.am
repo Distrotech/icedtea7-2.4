@@ -300,8 +300,14 @@ endif
 
 if WITH_ALT_HSBUILD
 ICEDTEA_PATCHES += patches/hotspot/aarch64/werror.patch \
-	patches/hotspot/aarch64/20140415-8029858-enhance_array_copies.patch \
-	patches/hotspot/aarch64/20140415-8034926-attribute_classes_properly.patch
+	patches/hotspot/aarch64/20140715-8030763-validate_global_memory_allocation.patch \
+	patches/hotspot/aarch64/20140715-8032536-jvm_resolves_wrong_method.patch \
+	patches/hotspot/aarch64/20140715-8036800-attribute_oom_to_right_code.patch \
+	patches/hotspot/aarch64/20140715-8035119-fix_exceptions_to_bytecode_verification.patch \
+	patches/hotspot/aarch64/20140715-8037076-check_constant_pool_constants.patch \
+	patches/hotspot/aarch64/20140715-8037157-verify_init_call.patch \
+	patches/hotspot/aarch64/20140715-8043454-8037157_test_case_fix.patch \
+	patches/hotspot/aarch64/20140715-8037167-better_method_signature_resolution.patch
 endif
 
 ICEDTEA_PATCHES += $(DISTRIBUTION_PATCHES)
