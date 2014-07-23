@@ -1,3 +1,11 @@
+2014-07-22  Andrew John Hughes  <gnu_andrew@member.fsf.org>
+
+	* Makefile.am:
+	(ICEDTEA_PATCHES): Add new patch for AArch64.
+	* NEWS: Updated.
+	* patches/hotspot/aarch64/8024648-zero_build_fix.patch:
+	Fix Zero on AArch64.
+
 2014-07-16  Andrew John Hughes  <gnu.andrew@member.fsf.org>
 
 	* patches/hotspot/aarch64/20140415-8029858-enhance_array_copies.patch,

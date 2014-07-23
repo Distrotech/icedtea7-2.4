@@ -307,7 +307,8 @@ ICEDTEA_PATCHES += patches/hotspot/aarch64/werror.patch \
 	patches/hotspot/aarch64/20140715-8037076-check_constant_pool_constants.patch \
 	patches/hotspot/aarch64/20140715-8037157-verify_init_call.patch \
 	patches/hotspot/aarch64/20140715-8043454-8037157_test_case_fix.patch \
-	patches/hotspot/aarch64/20140715-8037167-better_method_signature_resolution.patch
+	patches/hotspot/aarch64/20140715-8037167-better_method_signature_resolution.patch \
+	patches/hotspot/aarch64/8024648-zero_build_fix.patch
 endif
 
 ICEDTEA_PATCHES += $(DISTRIBUTION_PATCHES)

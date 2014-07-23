@@ -59,6 +59,7 @@ New in release 2.4.8 (2014-07-XX):
   - S8023990: Regression: postscript size increase from 6u18
   - S8024283: 10 nashorn tests fail with similar stack trace InternalError with cause being NoClassDefFoundError
   - S8024616: JSR292: lazily initialize core NamedFunctions used for bootstrapping
+  - S8024648: 7141246 & 8016131 break Zero port (AArch64 only)
   - S8024830: SEGV in org.apache.lucene.codecs.compressing.CompressingTermVectorsReader.get
   - S8025588: [macosx] Frozen AppKit thread in 7u40
   - S8026404: Logging in Applet can trigger ACE: access denied ("java.lang.RuntimePermission" "modifyThreadGroup")

@@ -1,0 +1,179 @@
+diff -Nru openjdk.orig/hotspot/make/bsd/makefiles/buildtree.make openjdk/hotspot/make/bsd/makefiles/buildtree.make
+--- openjdk.orig/hotspot/make/bsd/makefiles/buildtree.make	2014-07-08 13:29:51.000000000 +0100
++++ openjdk/hotspot/make/bsd/makefiles/buildtree.make	2014-07-23 05:29:28.168607403 +0100
+@@ -1,5 +1,6 @@
+ #
+ # Copyright (c) 2005, 2013, Oracle and/or its affiliates. All rights reserved.
++# Copyright (c) 2013 Red Hat, Inc.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ #
+ # This code is free software; you can redistribute it and/or modify it
+@@ -58,8 +59,8 @@
+ OS_VENDOR:=$(shell uname -s)
+ 
+ -include $(SPEC)
+-include $(GAMMADIR)/make/scm.make
+ include $(GAMMADIR)/make/defs.make
++include $(GAMMADIR)/make/scm.make
+ include $(GAMMADIR)/make/altsrc.make
+ 
+ 
+@@ -222,6 +223,7 @@
+ 	echo "HOTSPOT_BUILD_USER = $(HOTSPOT_BUILD_USER)"; \
+ 	echo "HOTSPOT_VM_DISTRO = $(HOTSPOT_VM_DISTRO)"; \
+ 	echo "OPENJDK = $(OPENJDK)"; \
++	echo "ZERO_BUILD = $(ZERO_BUILD)"; \
+ 	echo "$(LP64_SETTING/$(DATA_MODE))"; \
+ 	echo; \
+ 	echo "# Used for platform dispatching"; \
+diff -Nru openjdk.orig/hotspot/make/bsd/makefiles/gcc.make openjdk/hotspot/make/bsd/makefiles/gcc.make
+--- openjdk.orig/hotspot/make/bsd/makefiles/gcc.make	2014-07-08 13:29:51.000000000 +0100
++++ openjdk/hotspot/make/bsd/makefiles/gcc.make	2014-07-23 05:28:27.707724844 +0100
+@@ -1,5 +1,6 @@
+ #
+ # Copyright (c) 1999, 2013, Oracle and/or its affiliates. All rights reserved.
++# Copyright (c) 2013 Red Hat, Inc.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ #
+ # This code is free software; you can redistribute it and/or modify it
+@@ -178,10 +179,10 @@
+ VM_PICFLAG/AOUT   =
+ VM_PICFLAG        = $(VM_PICFLAG/$(LINK_INTO))
+ 
+-ifeq ($(JVM_VARIANT_ZERO), true)
++ifeq ($(TYPE),ZERO)
+   CFLAGS += $(LIBFFI_CFLAGS)
+ endif
+-ifeq ($(JVM_VARIANT_ZEROSHARK), true)
++ifeq ($(TYPE),SHARK)
+   CFLAGS += $(LIBFFI_CFLAGS)
+   CFLAGS += $(LLVM_CFLAGS)
+ endif
+diff -Nru openjdk.orig/hotspot/make/bsd/makefiles/vm.make openjdk/hotspot/make/bsd/makefiles/vm.make
+--- openjdk.orig/hotspot/make/bsd/makefiles/vm.make	2014-07-08 13:29:51.000000000 +0100
++++ openjdk/hotspot/make/bsd/makefiles/vm.make	2014-07-23 05:30:59.193936303 +0100
+@@ -1,5 +1,6 @@
+ #
+ # Copyright (c) 1999, 2013, Oracle and/or its affiliates. All rights reserved.
++# Copyright (c) 2013 Red Hat, Inc.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ #
+ # This code is free software; you can redistribute it and/or modify it
+@@ -42,7 +43,9 @@
+ -include $(DEP_DIR)/*.d
+ 
+ # read machine-specific adjustments (%%% should do this via buildtree.make?)
+-ifeq ($(findstring true, $(JVM_VARIANT_ZERO) $(JVM_VARIANT_ZEROSHARK)), true)
++ifeq ($(TYPE),ZERO)
++  include $(MAKEFILES_DIR)/zeroshark.make
++else ifeq ($(TYPE),SHARK)
+   include $(MAKEFILES_DIR)/zeroshark.make
+ else
+   include $(MAKEFILES_DIR)/$(BUILDARCH).make
+@@ -289,10 +292,10 @@
+ 
+   LIBS_VM                  += $(LIBS)
+ endif
+-ifeq ($(JVM_VARIANT_ZERO), true)
++ifeq ($(TYPE),ZERO)
+   LIBS_VM += $(LIBFFI_LIBS)
+ endif
+-ifeq ($(JVM_VARIANT_ZEROSHARK), true)
++ifeq ($(TYPE),SHARK)
+   LIBS_VM   += $(LIBFFI_LIBS) $(LLVM_LIBS)
+   LFLAGS_VM += $(LLVM_LDFLAGS)
+ endif
+diff -Nru openjdk.orig/hotspot/make/linux/makefiles/buildtree.make openjdk/hotspot/make/linux/makefiles/buildtree.make
+--- openjdk.orig/hotspot/make/linux/makefiles/buildtree.make	2014-07-08 13:29:51.000000000 +0100
++++ openjdk/hotspot/make/linux/makefiles/buildtree.make	2014-07-23 05:30:42.833697440 +0100
+@@ -1,5 +1,6 @@
+ #
+ # Copyright (c) 2005, 2013, Oracle and/or its affiliates. All rights reserved.
++# Copyright (c) 2013 Red Hat, Inc.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ #
+ # This code is free software; you can redistribute it and/or modify it
+@@ -55,8 +56,8 @@
+ # having to read the dependency files for the vm.
+ 
+ -include $(SPEC)
+-include $(GAMMADIR)/make/scm.make
+ include $(GAMMADIR)/make/defs.make
++include $(GAMMADIR)/make/scm.make
+ include $(GAMMADIR)/make/altsrc.make
+ 
+ 
+@@ -219,6 +220,7 @@
+ 	echo "HOTSPOT_BUILD_USER = $(HOTSPOT_BUILD_USER)"; \
+ 	echo "HOTSPOT_VM_DISTRO = $(HOTSPOT_VM_DISTRO)"; \
+ 	echo "OPENJDK = $(OPENJDK)"; \
++	echo "ZERO_BUILD = $(ZERO_BUILD)"; \
+ 	echo "$(LP64_SETTING/$(DATA_MODE))"; \
+ 	echo; \
+ 	echo "# Used for platform dispatching"; \
+diff -Nru openjdk.orig/hotspot/make/linux/makefiles/gcc.make openjdk/hotspot/make/linux/makefiles/gcc.make
+--- openjdk.orig/hotspot/make/linux/makefiles/gcc.make	2014-07-23 05:26:57.726411553 +0100
++++ openjdk/hotspot/make/linux/makefiles/gcc.make	2014-07-23 05:29:47.312886877 +0100
+@@ -1,5 +1,6 @@
+ #
+ # Copyright (c) 1999, 2013, Oracle and/or its affiliates. All rights reserved.
++# Copyright (c) 2013 Red Hat, Inc.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ #
+ # This code is free software; you can redistribute it and/or modify it
+@@ -138,10 +139,10 @@
+ VM_PICFLAG/AOUT   =
+ VM_PICFLAG        = $(VM_PICFLAG/$(LINK_INTO))
+ 
+-ifeq ($(JVM_VARIANT_ZERO), true)
++ifeq ($(TYPE),ZERO)
+ CFLAGS += $(LIBFFI_CFLAGS)
+ endif
+-ifeq ($(JVM_VARIANT_ZEROSHARK), true)
++ifeq ($(TYPE),SHARK)
+ CFLAGS += $(LIBFFI_CFLAGS)
+ CFLAGS += $(LLVM_CFLAGS)
+ endif
+diff -Nru openjdk.orig/hotspot/make/linux/makefiles/vm.make openjdk/hotspot/make/linux/makefiles/vm.make
+--- openjdk.orig/hotspot/make/linux/makefiles/vm.make	2014-07-08 13:29:51.000000000 +0100
++++ openjdk/hotspot/make/linux/makefiles/vm.make	2014-07-23 05:29:59.673067321 +0100
+@@ -1,5 +1,6 @@
+ #
+ # Copyright (c) 1999, 2013, Oracle and/or its affiliates. All rights reserved.
++# Copyright (c) 2013 Red Hat, Inc.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ #
+ # This code is free software; you can redistribute it and/or modify it
+@@ -42,7 +43,9 @@
+ -include $(DEP_DIR)/*.d
+ 
+ # read machine-specific adjustments (%%% should do this via buildtree.make?)
+-ifeq ($(findstring true, $(JVM_VARIANT_ZERO) $(JVM_VARIANT_ZEROSHARK)), true)
++ifeq ($(TYPE),ZERO)
++  include $(MAKEFILES_DIR)/zeroshark.make
++else ifeq ($(TYPE),SHARK)
+   include $(MAKEFILES_DIR)/zeroshark.make
+ else
+   include $(MAKEFILES_DIR)/$(BUILDARCH).make
+@@ -300,7 +303,7 @@
+ vm.def: $(Res_Files) $(Obj_Files)
+ 	sh $(GAMMADIR)/make/linux/makefiles/build_vm_def.sh *.o > $@
+ 
+-ifeq ($(JVM_VARIANT_ZEROSHARK), true)
++ifeq ($(TYPE),SHARK)
+   STATIC_CXX = false
+ else
+   ifeq ($(ZERO_LIBARCH), ppc64)
+@@ -332,10 +335,10 @@
+ 
+   LIBS_VM                  += $(LIBS)
+ endif
+-ifeq ($(JVM_VARIANT_ZERO), true)
++ifeq ($(TYPE),ZERO)
+   LIBS_VM += $(LIBFFI_LIBS)
+ endif
+-ifeq ($(JVM_VARIANT_ZEROSHARK), true)
++ifeq ($(TYPE),SHARK)
+   LIBS_VM   += $(LIBFFI_LIBS) $(LLVM_LIBS)
+   LFLAGS_VM += $(LLVM_LDFLAGS)
+ endif
